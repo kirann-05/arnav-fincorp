@@ -5,58 +5,88 @@ const resources = {
   en: {
     translation: {
       "nav": {
-        "personal": "Personal",
-        "business": "Business",
-        "investment": "Investment",
-        "about": "About Us",
-        "services": "Services",
-        "download": "Download App"
+        "features": "Features",
+        "calculator": "Calculator",
+        "reviews": "Reviews",
+        "getStarted": "Get Started"
       },
       "hero": {
-        "title1": "Experience Seamless",
-        "title2": "Banking with",
-        "brand": "Arnav Fincorp",
-        "subtitle": "Take control of your finances and fundraising with our intuitive and secure mobile app.",
-        "cta": "Get Started",
-        "stats": {
-          "users": "150K+",
-          "desc": "Number of downloads"
-        }
+        "titleMain": "Digital Banking",
+        "titleAccent": "Reimagined.",
+        "subtitle": "Secure, cinematic financial experiences built for the next generation. Experience the depth of modern fintech.",
+        "ctaPrimary": "Start Now",
+        "ctaSecondary": "Learn More",
+        "balance": "Current Balance"
       },
       "features": {
-        "title": "Discover our range of financial services",
-        "badge": "SIMPLIFY",
-        "card1": "USD Balance",
-        "payNow": "Pay Now"
+        "title": "Advanced Capabilities",
+        "instant": {
+          "title": "Instant Transfers",
+          "desc": "Move funds across the globe in milliseconds with our proprietary ledger technology."
+        },
+        "security": {
+          "title": "Quantum Security",
+          "desc": "Your assets protected by the highest level of encryption."
+        },
+        "global": {
+          "title": "Global Reach",
+          "desc": "Connect with 150+ countries seamlessly."
+        },
+        "analytics": {
+          "title": "Real-time Analytics",
+          "desc": "Deep insights into your spending and investment habits with AI-driven models."
+        }
+      },
+      "calculator": {
+        "title": "Investment Calculator",
+        "principal": "Principal Amount",
+        "period": "Time Period (Years)",
+        "result": "Expected Return",
+        "investNow": "Invest Now"
       }
     }
   },
   hi: {
     translation: {
       "nav": {
-        "personal": "व्यक्तिगत",
-        "business": "व्यापार",
-        "investment": "निवेश",
-        "about": "हमारे बारे में",
-        "services": "सेवाएं",
-        "download": "ऐप डाउनलोड करें"
+        "features": "विशेषताएं",
+        "calculator": "कैलकुलेटर",
+        "reviews": "समीक्षाएं",
+        "getStarted": "शुरू करें"
       },
       "hero": {
-        "title1": "निर्बाध बैंकिंग का",
-        "title2": "अनुभव करें",
-        "brand": "अर्णव फिनकॉर्प",
-        "subtitle": "हमारे सहज और सुरक्षित मोबाइल ऐप के साथ अपने वित्त और धन उगाहने पर नियंत्रण रखें।",
-        "cta": "शुरू करें",
-        "stats": {
-          "users": "150K+",
-          "desc": "डाउनलोड की संख्या"
-        }
+        "titleMain": "डिजिटल बैंकिंग का",
+        "titleAccent": "नया स्वरूप।",
+        "subtitle": "अगली पीढ़ी के लिए निर्मित सुरक्षित, सिनेमाई वित्तीय अनुभव। आधुनिक फिनटेक की गहराई का अनुभव करें।",
+        "ctaPrimary": "अभी शुरू करें",
+        "ctaSecondary": "अधिक जानें",
+        "balance": "वर्तमान शेष"
       },
       "features": {
-        "title": "हमारी वित्तीय सेवाओं की श्रृंखला खोजें",
-        "badge": "सरल बनाएं",
-        "card1": "USD शेष",
-        "payNow": "अभी भुगतान करें"
+        "title": "उन्नत क्षमताएं",
+        "instant": {
+          "title": "त्वरित स्थानांतरण",
+          "desc": "हमारी मालिकाना लेज़र तकनीक के साथ मिलीसेकंड में दुनिया भर में फंड ट्रांसफर करें।"
+        },
+        "security": {
+          "title": "क्वांटम सुरक्षा",
+          "desc": "आपकी संपत्ति उच्चतम स्तर के एन्क्रिप्शन द्वारा सुरक्षित है।"
+        },
+        "global": {
+          "title": "वैश्विक पहुंच",
+          "desc": "150+ देशों के साथ निर्बाध रूप से जुड़ें।"
+        },
+        "analytics": {
+          "title": "वास्तविक समय विश्लेषण",
+          "desc": "एआई-संचालित मॉडल के साथ आपके खर्च और निवेश की आदतों में गहरी अंतर्दृष्टि।"
+        }
+      },
+      "calculator": {
+        "title": "निवेश कैलकुलेटर",
+        "principal": "मूल राशि",
+        "period": "समय अवधि (वर्ष)",
+        "result": "अपेक्षित रिटर्न",
+        "investNow": "अभी निवेश करें"
       }
     }
   }
