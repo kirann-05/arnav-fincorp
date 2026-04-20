@@ -1,0 +1,132 @@
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  z-index: 1000;
+  border-radius: 9999px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.logo-icon {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.logo-icon .dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-primary);
+  border-radius: 2px;
+}
+.logo-icon .dot:nth-child(2) { background-color: var(--text-color); }
+.logo-icon .dot:nth-child(3) { background-color: var(--text-color); }
+
+.navbar-links {
+  display: none;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .navbar-links {
+    display: flex;
+  }
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--text-color);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.theme-toggle:hover {
+  background: var(--glass-border);
+}
+
+.lang-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 9999px;
+  padding: 4px 8px;
+  cursor: pointer;
+  width: 80px;
+  justify-content: space-between;
+}
+
+.lang-slider span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  z-index: 2;
+  width: 50%;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.lang-slider span.active {
+  color: #fff;
+}
+
+.slider-thumb {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 34px;
+  height: 24px;
+  background-color: var(--accent-primary);
+  border-radius: 9999px;
+  z-index: 1;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.slider-thumb.hi {
+  transform: translateX(38px);
+}
+
+.download-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
