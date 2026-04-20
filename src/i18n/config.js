@@ -8,6 +8,8 @@ const resources = {
         "personal": "Personal",
         "business": "Business",
         "investment": "Investment",
+        "about": "About Us",
+        "services": "Services",
         "download": "Download App"
       },
       "hero": {
@@ -35,6 +37,8 @@ const resources = {
         "personal": "व्यक्तिगत",
         "business": "व्यापार",
         "investment": "निवेश",
+        "about": "हमारे बारे में",
+        "services": "सेवाएं",
         "download": "ऐप डाउनलोड करें"
       },
       "hero": {

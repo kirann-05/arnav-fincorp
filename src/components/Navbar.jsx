@@ -3,6 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../context/ThemeContext';
 import { Sun, Moon, Download } from 'lucide-react';
+import Link from 'next/link';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -15,7 +16,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar glass-panel">
-      <div className="navbar-brand">
+      <Link href="/" className="navbar-brand" style={{ textDecoration: 'none' }}>
         <div className="logo-icon">
           <div className="dot"></div>
           <div className="dot"></div>
@@ -23,12 +24,12 @@ const Navbar = () => {
           <div className="dot"></div>
         </div>
         <span className="brand-text">Arnav Fincorp</span>
-      </div>
+      </Link>
 
       <div className="navbar-links">
-        <a href="#personal">{t('nav.personal')}</a>
-        <a href="#business">{t('nav.business')}</a>
-        <a href="#investment">{t('nav.investment')}</a>
+        <Link href="/">{t('nav.personal')}</Link>
+        <Link href="/about">{t('nav.about')}</Link>
+        <Link href="/services">{t('nav.services')}</Link>
       </div>
 
       <div className="navbar-actions">

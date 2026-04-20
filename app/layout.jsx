@@ -1,6 +1,7 @@
 import { Outfit } from 'next/font/google';
 import { ThemeProvider } from '../src/context/ThemeContext';
 import { I18nProvider } from '../src/providers/I18nProvider';
+import Navbar from '../src/components/Navbar';
 import './globals.css';
 
 const outfit = Outfit({ subsets: ['latin'] });
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
       <body className={outfit.className}>
         <I18nProvider>
           <ThemeProvider>
+            <Navbar />
             {children}
           </ThemeProvider>
         </I18nProvider>

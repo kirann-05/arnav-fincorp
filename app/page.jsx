@@ -4,7 +4,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import Navbar from '../src/components/Navbar';
 import Button from '../src/components/Button';
 import GlassCard from '../src/components/GlassCard';
 
@@ -17,7 +16,6 @@ export default function Home() {
   return (
     <div className="app-container">
       <Scene3D />
-      <Navbar />
 
       <main className="hero-section">
         <div className="hero-content">
