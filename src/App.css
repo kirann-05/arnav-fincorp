@@ -441,7 +441,7 @@
 }
 .about-hero-sub {
   font-size: 1.2rem; color: var(--text-secondary);
-  max-width: 560px; margin: 0 auto; line-height: 1.7;
+  max-width: 980px; margin: 0 auto; line-height: 1.75;
 }
 
 .about-grid { padding: 0 8% 60px; max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; }

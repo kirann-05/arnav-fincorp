@@ -244,7 +244,7 @@ const resources = {
       },
       aboutPage: {
         eyebrow: "About Us",
-        titleStart: "Built for",
+        titleStart: "Born in Bikaner. Built for",
         titleAccent: "Bharat's",
         titleEnd: "backbone.",
         subtitle: "Since 2012, Arnav FinCorp has been quietly rewriting what credit looks like for the Indian heartland. We finance the kirana owners of Kote Gate, the mandi traders of Sri Ganganagar, the women entrepreneurs of Udaipur, and the first-generation borrowers no metro bank will underwrite. From a two-room office above a bhujia shop in Bikaner, we have grown to 48 branches across six states — and crossed ₹325 crore in disbursements to over 12,400 families. Through every chapter of that growth, one promise has not changed: cash flow is real, character is verifiable, and the Bharat that built India deserves credit on its own terms.",
@@ -510,9 +510,9 @@ const resources = {
       },
       aboutPage: {
         eyebrow: "हमारे बारे में",
-        titleStart: "भारत की",
-        titleAccent: "रीढ़",
-        titleEnd: "के लिए बने।",
+        titleStart: "बीकानेर में जन्मे।",
+        titleAccent: "भारत की",
+        titleEnd: "रीढ़ के लिए बने।",
         subtitle: "2012 से, अर्णव फिनकॉर्प चुपचाप उस तरीके को फिर से लिख रहा है जिससे भारत के दिल को ऋण मिलता है। हम कोटे गेट के किराना मालिकों, श्रीगंगानगर के मंडी व्यापारियों, उदयपुर की महिला उद्यमियों और उन पहली पीढ़ी के उधारकर्ताओं को वित्त देते हैं जिन्हें कोई मेट्रो बैंक नहीं अपनाएगा। बीकानेर में एक भुजिया दुकान के ऊपर के दो कमरे के दफ्तर से, हम छह राज्यों की 48 शाखाओं तक बढ़े हैं — और 12,400 से अधिक परिवारों को ₹325 करोड़ से ज़्यादा वितरित किया है। इस यात्रा के हर अध्याय में एक वादा नहीं बदला: नकदी प्रवाह वास्तविक है, चरित्र सत्यापन योग्य है, और जिस भारत ने इंडिया को बनाया वह अपनी शर्तों पर ऋण का हकदार है।",
         ctaTitle: "अगला कदम उठाने को तैयार हैं?",
         ctaDesc: "आज ही हमारे ऋण विशेषज्ञों से बात करें। तेज़ मंजूरी, निष्पक्ष दरें, कोई छिपे शुल्क नहीं।",

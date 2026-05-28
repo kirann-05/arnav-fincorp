@@ -101,12 +101,8 @@ const About = () => {
       {/* ══ BODY GRID ══ */}
       <div className="about-grid">
 
-        {/* ── Founder Story Card — lifted up to peek over hero, creating scroll incentive ── */}
-        <motion.div
-          className="about-card"
-          {...fadeUp}
-          style={{ marginBottom: 24, maxWidth: 880, marginLeft: 'auto', marginRight: 'auto', marginTop: -64, position: 'relative', zIndex: 2 }}
-        >
+        {/* ── Founder Story Card ── */}
+        <motion.div className="about-card" {...fadeUp} style={{ marginBottom: 24, maxWidth: 880, marginLeft: 'auto', marginRight: 'auto' }}>
           <div className="about-card-icon">
             <Heart size={22} />
           </div>
