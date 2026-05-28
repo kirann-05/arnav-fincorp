@@ -1,54 +1,95 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { useTheme } from '../context/ThemeContext';
-import { Sun, Moon, Download } from 'lucide-react';
-import './Navbar.css';
+import React, { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import { useTheme } from '../context/ThemeContext'
+import { Sun, Moon } from 'lucide-react'
 
 const Navbar = () => {
-  const { t, i18n } = useTranslation();
-  const { theme, toggleTheme } = useTheme();
+  const { t, i18n } = useTranslation()
+  const { theme, toggleTheme } = useTheme()
+  const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 50)
+    window.addEventListener('scroll', handler)
+    return () => window.removeEventListener('scroll', handler)
+  }, [])
 
   const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'hi' : 'en');
-  };
+    i18n.changeLanguage(i18n.language === 'en' ? 'hi' : 'en')
+  }
+
+  const isHomePage = location.pathname === '/'
+
+  const NavLink = ({ to, children, isAnchor }) => {
+    if (isAnchor) {
+      if (!isHomePage) {
+        return <Link to={`/${to}`} onClick={() => setMobileMenuOpen(false)}>{children}</Link>
+      }
+      return <a href={to} onClick={() => setMobileMenuOpen(false)}>{children}</a>
+    }
+    return <Link to={to} onClick={() => setMobileMenuOpen(false)}>{children}</Link>
+  }
 
   return (
-    <nav className="navbar glass-panel">
-      <div className="navbar-brand">
-        <div className="logo-icon">
-          <div className="dot"></div>
-          <div className="dot"></div>
-          <div className="dot"></div>
-          <div className="dot"></div>
+    <nav className={`navbar glass-strong ${scrolled ? 'navbar--scrolled' : ''}`} id="main-nav">
+      <Link to="/" className="nav-brand">
+        <div className="nav-logo-icon">
+          <img src="/assets/logo-icon.png" alt="Arnav FinCorp Logo" className="nav-logo-image" />
         </div>
-        <span className="brand-text">Arnav Fincorp</span>
+      </Link>
+
+      <div className="nav-links-wrapper">
+        <div className={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
+          <NavLink to="#hero" isAnchor>{t('nav.home')}</NavLink>
+          <NavLink to="/loans">{t('nav.loanProducts')}</NavLink>
+          <NavLink to="/about">{t('nav.about')}</NavLink>
+          <NavLink to="#calculator" isAnchor>{t('nav.calculator')}</NavLink>
+        </div>
       </div>
 
-      <div className="navbar-links">
-        <a href="#personal">{t('nav.personal')}</a>
-        <a href="#business">{t('nav.business')}</a>
-        <a href="#investment">{t('nav.investment')}</a>
-      </div>
-
-      <div className="navbar-actions">
-        <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
-          {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+      <div className="nav-actions">
+        {/* Theme Toggle */}
+        <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+          <motion.div
+            key={theme}
+            initial={{ rotate: -90, opacity: 0 }}
+            animate={{ rotate: 0, opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </motion.div>
         </button>
 
-        <div className="lang-slider" onClick={toggleLanguage}>
-          <div className={`slider-thumb ${i18n.language === 'hi' ? 'hi' : 'en'}`}></div>
+        {/* Language Toggle */}
+        <div className="lang-toggle" onClick={toggleLanguage}>
+          <div className={`lang-slider-thumb ${i18n.language === 'hi' ? 'hi' : 'en'}`} />
           <span className={i18n.language === 'en' ? 'active' : ''}>EN</span>
-          <span className={i18n.language === 'hi' ? 'active' : ''}>HI</span>
+          <span className={i18n.language === 'hi' ? 'active' : ''}>हिं</span>
         </div>
 
-        <button className="pill-button download-btn">
-          <span>{t('nav.download')}</span>
-          <Download size={16} />
+        {/* CTA */}
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Link to="/contact" className="nav-cta">
+            {t('nav.contactUs')}
+          </Link>
+        </motion.div>
+
+        {/* Mobile Hamburger */}
+        <button className="hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Menu">
+          <span className={mobileMenuOpen ? 'open' : ''} />
+          <span className={mobileMenuOpen ? 'open' : ''} />
+          <span className={mobileMenuOpen ? 'open' : ''} />
         </button>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
-export default Navbar;
+export default Navbar

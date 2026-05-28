@@ -4,89 +4,428 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
-      "nav": {
-        "features": "Features",
-        "calculator": "Calculator",
-        "reviews": "Reviews",
-        "getStarted": "Get Started"
+      nav: {
+        home: "Home",
+        loanProducts: "Loan Products",
+        calculator: "EMI Calculator",
+        about: "About",
+        feedback: "Feedback",
+        contactUs: "Contact Us",
+        download: "Download App"
       },
-      "hero": {
-        "titleMain": "Digital Banking",
-        "titleAccent": "Reimagined.",
-        "subtitle": "Secure, cinematic financial experiences built for the next generation. Experience the depth of modern fintech.",
-        "ctaPrimary": "Start Now",
-        "ctaSecondary": "Learn More",
-        "balance": "Current Balance"
+      hero: {
+        badge: "RBI REGISTERED NBFC",
+        titleStart: "Credit that respects",
+        titleAccent: "your",
+        titleEnd: "ambition.",
+        subtitle: "Home, Business, and Personal credit that's fair, transparent, and fast — purposefully crafted for Bharat's aspirations.",
+        cta1: "Calculate your EMI",
+        cta2: "Explore All Loans",
+        stat1Value: "8.5%",
+        stat1Label: "Interest from",
+        stat2Value: "₹325 Cr+",
+        stat2Label: "Loans disbursed",
+        stat3Value: "48 hrs",
+        stat3Label: "Avg. approval"
       },
-      "features": {
-        "title": "Advanced Capabilities",
-        "instant": {
-          "title": "Instant Transfers",
-          "desc": "Move funds across the globe in milliseconds with our proprietary ledger technology."
+      products: {
+        eyebrow: "OUR PRODUCTS",
+        titleStart: "A loan for every",
+        titleAccent: "chapter",
+        titleEnd: "of life.",
+        lapLoan: {
+          title: "Loan Against Property",
+          desc: "Unlock the true value of your real estate. Get access to higher loan amounts and flexible repayment terms.",
+          rate: "9.5%",
+          tenure: "15 yrs",
+          amount: "₹1Cr",
+          backTitle: "LAP Details",
+          eligibility: "Property owners, Age 21-65, Steady income source",
+          documents: "Property Titles, Income Proof, KYC, Valuation Report",
+          benefits: "High loan-to-value, Lower interest than personal loans"
         },
-        "security": {
-          "title": "Quantum Security",
-          "desc": "Your assets protected by the highest level of encryption."
+        homeLoan: {
+          title: "Home Loan",
+          desc: "Own a home in the city of your dreams. Affordable EMIs with property as security and flexible repayment.",
+          rate: "8.5%",
+          tenure: "20 yrs",
+          amount: "₹50L",
+          backTitle: "Home Loan Details",
+          eligibility: "Salaried/Self-employed, Age 21-60, Min income ₹25,000/month",
+          documents: "Aadhar, PAN, Income Proof, Property Documents",
+          benefits: "Low interest rates, No hidden charges, Quick approval"
         },
-        "global": {
-          "title": "Global Reach",
-          "desc": "Connect with 150+ countries seamlessly."
+        businessLoan: {
+          title: "Business Loan",
+          desc: "Expand or kickstart your business with flexible funding. Short-term credit for entrepreneurs & MSMEs.",
+          rate: "14%",
+          tenure: "5 yrs",
+          amount: "₹25L",
+          backTitle: "Business Loan Details",
+          eligibility: "Business vintage 2+ years, Min turnover ₹12L/year",
+          documents: "GST Registration, Bank Statements, ITR (2 years)",
+          benefits: "Collateral-free up to ₹10L, Flexible repayment"
         },
-        "analytics": {
-          "title": "Real-time Analytics",
-          "desc": "Deep insights into your spending and investment habits with AI-driven models."
+        vehicleLoan4W: {
+          title: "Vehicle Loan (4W)",
+          desc: "Drive your dream car today. Hassle-free processing for new and pre-owned four-wheelers.",
+          rate: "9.0%",
+          tenure: "7 yrs",
+          amount: "₹15L",
+          backTitle: "4W Loan Details",
+          eligibility: "Salaried/Self-employed, Min age 21, Stable employment",
+          documents: "KYC, Income Proof, Vehicle Quotation",
+          benefits: "Up to 90% on-road funding, Minimal paperwork"
+        },
+        vehicleLoan2W: {
+          title: "Vehicle Loan (2W)",
+          desc: "Get on the road with ease. Instant loans for bikes and scooters with low down payment options.",
+          rate: "11%",
+          tenure: "3 yrs",
+          amount: "₹2L",
+          backTitle: "2W Loan Details",
+          eligibility: "Age 18-60, Basic income proof, KYC",
+          documents: "Aadhar, PAN, Bank Passbook, Photo",
+          benefits: "Instant approval, Flexible EMIs, Low down payment"
+        },
+        goldLoan: {
+          title: "Gold Loan",
+          desc: "Instant cash against your gold ornaments. Safe, secure, and minimal documentation required.",
+          rate: "10%",
+          tenure: "1 yr",
+          amount: "₹20L",
+          backTitle: "Gold Loan Details",
+          eligibility: "Anyone over 18 years with gold ornaments",
+          documents: "Aadhar, PAN, Gold Valuation (done in-branch)",
+          benefits: "Spot disbursement, Safe storage, Easy renewal"
+        },
+        personalLoan: {
+          title: "Personal Loan",
+          desc: "Meet personal expenditures — weddings, travel, emergencies. Fast disbursement, minimal documentation.",
+          rate: "16%",
+          tenure: "3 yrs",
+          amount: "₹10L",
+          backTitle: "Personal Loan Details",
+          eligibility: "Salaried/Self-employed, Age 21-55, Min income ₹20,000/month",
+          documents: "Aadhar, PAN, Salary Slips, Bank Statement",
+          benefits: "No collateral needed, Instant approval"
+        },
+        msmeLoan: {
+          title: "MSME Loan",
+          desc: "Structured loans for Micro, Small & Medium Enterprises — working capital, machinery, expansion.",
+          rate: "12%",
+          tenure: "7 yrs",
+          amount: "₹30L",
+          backTitle: "MSME Loan Details",
+          eligibility: "Registered MSME, Udyam certificate, 1+ year operation",
+          documents: "Udyam Certificate, GST Returns, Bank Statements",
+          benefits: "Government subsidy eligible, Low processing fees"
+        },
+        applyNow: "Apply Now",
+        flipHint: "Hover for details",
+        labelRate: "Rate",
+        labelTenure: "Tenure",
+        labelAmount: "Amt.",
+        exploreMore: "Explore More Loans"
+      },
+      trust: {
+        eyebrow: "TRUST INDICATORS",
+        titleStart: "Numbers that build",
+        titleAccent: "trust",
+        stat1: { value: "12,400", suffix: "+", label: "Happy Customers" },
+        stat2: { value: "325", prefix: "₹", suffix: "Cr+", label: "Loans Disbursed" },
+        stat3: { value: "48", suffix: "", label: "Branches Across India" },
+        stat4: { value: "14", suffix: "", label: "Years of Service" },
+        description: "Every number represents a family empowered, a business launched, and a dream fulfilled. We measure success in lives transformed."
+      },
+      calculator: {
+        eyebrow: "EMI CALCULATOR",
+        titleStart: "Plan your commitment,",
+        titleAccent: "before",
+        titleEnd: "you commit.",
+        description: "Use our intelligent calculator to plan your monthly outflow before applying. Get clarity on exact EMI, total interest, and total payable amount.",
+        loanAmount: "Loan Amount",
+        interestRate: "Interest Rate (% p.a.)",
+        loanTenure: "Loan Tenure (Years)",
+        monthlyEmi: "Monthly EMI",
+        totalInterest: "Total Interest",
+        totalAmount: "Total Amount",
+        applyForLoan: "Apply for this Loan"
+      },
+      testimonials: {
+        eyebrow: "TESTIMONIALS",
+        titleStart: "Stories from",
+        titleAccent: "Bharat's",
+        titleEnd: "borrowers.",
+        items: [
+          { quote: "Arnav FinCorp gave me a HOME loan when 3 banks refused. The process was transparent and the staff was incredibly helpful. I'm now a proud homeowner!", name: "Aarti Sharma", location: "Jaipur, Rajasthan", type: "Home Loan" },
+          { quote: "The speed of their BUSINESS loan disbursement is unmatched. I applied, got approved, and received funds within 5 days. My textile shop is thriving!", name: "Rajesh Patel", location: "Surat, Gujarat", type: "Business Loan" },
+          { quote: "I needed an MSME loan urgently for machinery. Arnav FinCorp's team personally visited my workshop and sanctioned the loan in record time.", name: "Sunita Devi", location: "Kanpur, UP", type: "MSME Loan" },
+          { quote: "Their personal loan helped me fund my daughter's education abroad. Simple process, no hidden charges. Truly a company that cares.", name: "Vikram Singh", location: "Chandigarh, Punjab", type: "Personal Loan" },
+          { quote: "What I love about Arnav FinCorp is their honesty. They clearly explained every charge, every clause. No bank ever did that for me.", name: "Meera Nair", location: "Kochi, Kerala", type: "Home Loan" }
+        ]
+      },
+      footer: {
+        tagline: "Credit that respects your ambition. Empowering Bharat's dreams since 2012.",
+        products: "Products",
+        company: "Company",
+        legal: "Legal",
+        homeLoan: "Home Loan",
+        businessLoan: "Business Loan",
+        personalLoan: "Personal Loan",
+        msmeLoan: "MSME Loan",
+        goldLoan: "Gold Loan",
+        aboutUs: "About Us",
+        careers: "Careers",
+        branches: "Branches",
+        contact: "Contact",
+        press: "Press",
+        termsConditions: "Terms & Conditions",
+        privacyPolicy: "Privacy Policy",
+        grievance: "Grievance Redressal",
+        fairPractice: "Fair Practice Code",
+        copyright: "© 2024 Arnav FinCorp Private Limited. All rights reserved. RBI Registered NBFC."
+      },
+      contactPage: {
+        eyebrow: "GET IN TOUCH",
+        titleStart: "Let us know how we can",
+        titleAccent: "assist you",
+        desc: "Our team is here to help you with your financial journey. Reach out to us via the form or our contact details.",
+        form: {
+          name: "Name",
+          namePlaceholder: "Enter your full name",
+          email: "Email",
+          emailPlaceholder: "Enter your email address",
+          phone: "Mobile Number",
+          phonePlaceholder: "+91 (000) 000-0000",
+          message: "Message",
+          messagePlaceholder: "Leave us a message...",
+          submit: "Send Message",
+          success: "Message sent successfully!"
+        },
+        sidebar: {
+          helpTitle: "Need help with the product?",
+          helpDesc: "Our support team is ready to assist you with loan applications, document verification, and eligibility checks.",
+          socialLinks: "Social Links",
+          addressTitle: "Address",
+          addressValue: "Sector 5, Jaipur, Rajasthan, India",
+          phoneValue: "+91 1800 456 9467",
+          emailValue: "contact@arnavfincorp.com"
         }
-      },
-      "calculator": {
-        "title": "Investment Calculator",
-        "principal": "Principal Amount",
-        "period": "Time Period (Years)",
-        "result": "Expected Return",
-        "investNow": "Invest Now"
       }
     }
   },
   hi: {
     translation: {
-      "nav": {
-        "features": "विशेषताएं",
-        "calculator": "कैलकुलेटर",
-        "reviews": "समीक्षाएं",
-        "getStarted": "शुरू करें"
+      nav: {
+        home: "होम",
+        loanProducts: "ऋण उत्पाद",
+        calculator: "EMI कैलकुलेटर",
+        about: "हमारे बारे में",
+        feedback: "प्रतिक्रिया",
+        contactUs: "संपर्क करें",
+        download: "ऐप डाउनलोड करें"
       },
-      "hero": {
-        "titleMain": "डिजिटल बैंकिंग का",
-        "titleAccent": "नया स्वरूप।",
-        "subtitle": "अगली पीढ़ी के लिए निर्मित सुरक्षित, सिनेमाई वित्तीय अनुभव। आधुनिक फिनटेक की गहराई का अनुभव करें।",
-        "ctaPrimary": "अभी शुरू करें",
-        "ctaSecondary": "अधिक जानें",
-        "balance": "वर्तमान शेष"
+      hero: {
+        badge: "RBI पंजीकृत NBFC",
+        titleStart: "ऋण जो सम्मान करे",
+        titleAccent: "आपकी",
+        titleEnd: "महत्वाकांक्षा का।",
+        subtitle: "होम, बिज़नेस और पर्सनल क्रेडिट — निष्पक्ष, पारदर्शी और तेज़ — भारत की आकांक्षाओं के लिए।",
+        cta1: "EMI कैलकुलेट करें",
+        cta2: "गोल्ड लोन आज़माएं",
+        stat1Value: "₹0",
+        stat1Label: "EMI",
+        stat2Value: "APY",
+        stat2Label: "12%",
+        stat3Value: "₹ 8 लाख",
+        stat3Label: "औसत वितरण"
       },
-      "features": {
-        "title": "उन्नत क्षमताएं",
-        "instant": {
-          "title": "त्वरित स्थानांतरण",
-          "desc": "हमारी मालिकाना लेज़र तकनीक के साथ मिलीसेकंड में दुनिया भर में फंड ट्रांसफर करें।"
+      products: {
+        eyebrow: "हमारे उत्पाद",
+        titleStart: "जीवन के हर",
+        titleAccent: "अध्याय",
+        titleEnd: "के लिए ऋण।",
+        lapLoan: {
+          title: "संपत्ति पर ऋण (LAP)",
+          desc: "अपनी अचल संपत्ति का सही मूल्य प्राप्त करें। उच्च ऋण राशि और लचीली चुकौती शर्तों तक पहुंच प्राप्त करें।",
+          rate: "9.5%",
+          tenure: "15 वर्ष",
+          amount: "₹1Cr",
+          backTitle: "LAP विवरण",
+          eligibility: "संपत्ति के मालिक, आयु 21-65, आय का स्थिर स्रोत",
+          documents: "संपत्ति के कागजात, आय प्रमाण, केवाईसी, मूल्यांकन रिपोर्ट",
+          benefits: "उच्च ऋण-से-मूल्य, पर्सनल लोन से कम ब्याज"
         },
-        "security": {
-          "title": "क्वांटम सुरक्षा",
-          "desc": "आपकी संपत्ति उच्चतम स्तर के एन्क्रिप्शन द्वारा सुरक्षित है।"
+        homeLoan: {
+          title: "होम लोन",
+          desc: "अपने सपनों के शहर में घर खरीदें। किफायती EMI, संपत्ति गारंटी और लचीली अवधि।",
+          rate: "8.5%",
+          tenure: "20 वर्ष",
+          amount: "₹50L",
+          backTitle: "होम लोन विवरण",
+          eligibility: "वेतनभोगी/स्वरोजगार, आयु 21-60, न्यूनतम आय ₹25,000/माह",
+          documents: "आधार, पैन, आय प्रमाण, संपत्ति दस्तावेज़",
+          benefits: "कम ब्याज दरें, कोई छिपे शुल्क नहीं, त्वरित मंजूरी"
         },
-        "global": {
-          "title": "वैश्विक पहुंच",
-          "desc": "150+ देशों के साथ निर्बाध रूप से जुड़ें।"
+        businessLoan: {
+          title: "बिज़नेस लोन",
+          desc: "लचीले फंडिंग से अपना व्यवसाय बढ़ाएं। उद्यमियों और MSMEs के लिए।",
+          rate: "14%",
+          tenure: "5 वर्ष",
+          amount: "₹25L",
+          backTitle: "बिज़नेस लोन विवरण",
+          eligibility: "व्यवसाय 2+ वर्ष पुराना, न्यूनतम टर्नओवर ₹12L/वर्ष",
+          documents: "GST पंजीकरण, बैंक स्टेटमेंट, ITR (2 वर्ष)",
+          benefits: "₹10L तक बिना गारंटी, लचीला भुगतान"
         },
-        "analytics": {
-          "title": "वास्तविक समय विश्लेषण",
-          "desc": "एआई-संचालित मॉडल के साथ आपके खर्च और निवेश की आदतों में गहरी अंतर्दृष्टि।"
+        vehicleLoan4W: {
+          title: "वाहन ऋण (4W)",
+          desc: "आज ही अपनी सपनों की कार चलाएं। नए और पुराने चार पहिया वाहनों के लिए आसान प्रक्रिया।",
+          rate: "9.0%",
+          tenure: "7 वर्ष",
+          amount: "₹15L",
+          backTitle: "4W ऋण विवरण",
+          eligibility: "वेतनभोगी/स्वरोजगार, न्यूनतम आयु 21, स्थिर रोजगार",
+          documents: "केवाईसी, आय प्रमाण, वाहन कोटेशन",
+          benefits: "90% तक ऑन-रोड फंडिंग, न्यूनतम कागजी कार्रवाई"
+        },
+        vehicleLoan2W: {
+          title: "वाहन ऋण (2W)",
+          desc: "आसानी से सड़क पर उतरें। कम डाउन पेमेंट विकल्पों के साथ बाइक और स्कूटर के लिए तत्काल ऋण।",
+          rate: "11%",
+          tenure: "3 वर्ष",
+          amount: "₹2L",
+          backTitle: "2W ऋण विवरण",
+          eligibility: "आयु 18-60, बुनियादी आय प्रमाण, केवाईसी",
+          documents: "आधार, पैन, बैंक पासबुक, फोटो",
+          benefits: "तत्काल मंजूरी, लचीली EMI, कम डाउन पेमेंट"
+        },
+        goldLoan: {
+          title: "गोल्ड लोन",
+          desc: "अपने सोने के गहनों के बदले तत्काल नकद। सुरक्षित और न्यूनतम दस्तावेज़ीकरण आवश्यक।",
+          rate: "10%",
+          tenure: "1 वर्ष",
+          amount: "₹20L",
+          backTitle: "गोल्ड लोन विवरण",
+          eligibility: "सोने के गहनों के साथ 18 वर्ष से अधिक का कोई भी व्यक्ति",
+          documents: "आधार, पैन, स्वर्ण मूल्यांकन",
+          benefits: "मौके पर वितरण, सुरक्षित भंडारण, आसान नवीनीकरण"
+        },
+        personalLoan: {
+          title: "पर्सनल लोन",
+          desc: "शादी, यात्रा, आपातकालीन — व्यक्तिगत ख़र्चों के लिए। तेज़ वितरण, न्यूनतम दस्तावेज़।",
+          rate: "16%",
+          tenure: "3 वर्ष",
+          amount: "₹10L",
+          backTitle: "पर्सनल लोन विवरण",
+          eligibility: "वेतनभोगी/स्वरोजगार, आयु 21-55, न्यूनतम आय ₹20,000/माह",
+          documents: "आधार, पैन, वेतन पर्ची, बैंक स्टेटमेंट",
+          benefits: "बिना गारंटी, तुरंत मंजूरी"
+        },
+        msmeLoan: {
+          title: "MSME लोन",
+          desc: "सूक्ष्म, लघु और मध्यम उद्यमों के लिए — कार्यशील पूंजी, मशीनरी, विस्तार।",
+          rate: "12%",
+          tenure: "7 वर्ष",
+          amount: "₹30L",
+          backTitle: "MSME लोन विवरण",
+          eligibility: "पंजीकृत MSME, उद्यम प्रमाणपत्र, 1+ वर्ष संचालन",
+          documents: "उद्यम प्रमाणपत्र, GST रिटर्न, बैंक स्टेटमेंट",
+          benefits: "सरकारी सब्सिडी योग्य, कम प्रोसेसिंग शुल्क"
+        },
+        applyNow: "अभी आवेदन करें",
+        flipHint: "विवरण के लिए होवर करें",
+        labelRate: "दर",
+        labelTenure: "अवधि",
+        labelAmount: "राशि",
+        exploreMore: "और ऋण देखें"
+      },
+      trust: {
+        eyebrow: "विश्वास संकेतक",
+        titleStart: "संख्याएँ जो बनाती हैं",
+        titleAccent: "विश्वास",
+        stat1: { value: "12,400", suffix: "+", label: "खुश ग्राहक" },
+        stat2: { value: "325", prefix: "₹", suffix: "Cr+", label: "वितरित ऋण" },
+        stat3: { value: "48", suffix: "", label: "भारत भर में शाखाएं" },
+        stat4: { value: "14", suffix: "", label: "सेवा के वर्ष" },
+        description: "हर संख्या एक सशक्त परिवार, एक शुरू किया गया व्यवसाय और एक पूरा किया गया सपना दर्शाती है।"
+      },
+      calculator: {
+        eyebrow: "EMI कैलकुलेटर",
+        titleStart: "अपनी प्रतिबद्धता की योजना बनाएं,",
+        titleAccent: "प्रतिबद्ध होने से",
+        titleEnd: "पहले।",
+        description: "आवेदन करने से पहले अपने मासिक भुगतान की योजना बनाने के लिए हमारे कैलकुलेटर का उपयोग करें।",
+        loanAmount: "ऋण राशि",
+        interestRate: "ब्याज दर (% वार्षिक)",
+        loanTenure: "ऋण अवधि (वर्ष)",
+        monthlyEmi: "मासिक EMI",
+        totalInterest: "कुल ब्याज",
+        totalAmount: "कुल राशि",
+        applyForLoan: "इस ऋण के लिए आवेदन करें"
+      },
+      testimonials: {
+        eyebrow: "प्रशंसापत्र",
+        titleStart: "कहानियाँ",
+        titleAccent: "भारत के",
+        titleEnd: "उधारकर्ताओं की।",
+        items: [
+          { quote: "अर्णव फिनकॉर्प ने मुझे होम लोन दिया जब 3 बैंकों ने मना कर दिया। प्रक्रिया पारदर्शी थी और कर्मचारी बेहद सहायक थे।", name: "आरती शर्मा", location: "जयपुर, राजस्थान", type: "होम लोन" },
+          { quote: "उनके बिज़नेस लोन की गति बेजोड़ है। मैंने आवेदन किया, मंजूरी मिली और 5 दिनों में फंड मिल गया।", name: "राजेश पटेल", location: "सूरत, गुजरात", type: "बिज़नेस लोन" },
+          { quote: "मशीनरी के लिए MSME लोन तुरंत चाहिए था। अर्णव फिनकॉर्प की टीम ने मेरी कार्यशाला का दौरा किया और रिकॉर्ड समय में लोन मंजूर किया।", name: "सुनीता देवी", location: "कानपुर, उत्तर प्रदेश", type: "MSME लोन" },
+          { quote: "उनके पर्सनल लोन से मैंने अपनी बेटी की विदेश में शिक्षा का खर्च उठाया। सरल प्रक्रिया, कोई छिपे शुल्क नहीं।", name: "विक्रम सिंह", location: "चंडीगढ़, पंजाब", type: "पर्सनल लोन" },
+          { quote: "अर्णव फिनकॉर्प की ईमानदारी मुझे बहुत पसंद है। हर शुल्क, हर शर्त स्पष्ट रूप से बताई गई।", name: "मीरा नायर", location: "कोच्चि, केरल", type: "होम लोन" }
+        ]
+      },
+      footer: {
+        tagline: "ऋण जो सम्मान करे आपकी महत्वाकांक्षा का। 2012 से भारत के सपनों को सशक्त बना रहे हैं।",
+        products: "उत्पाद",
+        company: "कंपनी",
+        legal: "कानूनी",
+        homeLoan: "होम लोन",
+        businessLoan: "बिज़नेस लोन",
+        personalLoan: "पर्सनल लोन",
+        msmeLoan: "MSME लोन",
+        goldLoan: "गोल्ड लोन",
+        aboutUs: "हमारे बारे में",
+        careers: "करियर",
+        branches: "शाखाएं",
+        contact: "संपर्क",
+        press: "प्रेस",
+        termsConditions: "नियम और शर्तें",
+        privacyPolicy: "गोपनीयता नीति",
+        grievance: "शिकायत निवारण",
+        fairPractice: "उचित व्यवहार संहिता",
+        copyright: "© 2026 अर्णव फिनकॉर्प प्रा. लि. सर्वाधिकार सुरक्षित। RBI पंजीकृत NBFC।"
+      },
+      contactPage: {
+        eyebrow: "संपर्क करें",
+        titleStart: "हमें बताएं कि हम आपकी",
+        titleAccent: "कैसे मदद",
+        titleEnd: "कर सकते हैं",
+        desc: "हमारी टीम आपकी वित्तीय यात्रा में आपकी मदद करने के लिए यहाँ है। फॉर्म या हमारे संपर्क विवरण के माध्यम से हमसे संपर्क करें।",
+        form: {
+          name: "नाम",
+          namePlaceholder: "अपना पूरा नाम दर्ज करें",
+          email: "ईमेल",
+          emailPlaceholder: "अपना ईमेल पता दर्ज करें",
+          phone: "मोबाइल नंबर",
+          phonePlaceholder: "+91 (000) 000-0000",
+          message: "संदेश",
+          messagePlaceholder: "हमें एक संदेश छोड़ें...",
+          submit: "संदेश भेजें",
+          success: "संदेश सफलतापूर्वक भेजा गया!"
+        },
+        sidebar: {
+          helpTitle: "उत्पाद के साथ मदद चाहिए?",
+          helpDesc: "हमारी सहायता टीम ऋण आवेदन, दस्तावेज़ सत्यापन और पात्रता जांच में आपकी सहायता के लिए तैयार है।",
+          socialLinks: "सोशल लिंक्स",
+          addressTitle: "पता",
+          addressValue: "सेक्टर 5, Jaipur, Rajasthan, भारत",
+          phoneValue: "+91 1800 456 9467",
+          emailValue: "contact@arnavfincorp.com"
         }
-      },
-      "calculator": {
-        "title": "निवेश कैलकुलेटर",
-        "principal": "मूल राशि",
-        "period": "समय अवधि (वर्ष)",
-        "result": "अपेक्षित रिटर्न",
-        "investNow": "अभी निवेश करें"
       }
     }
   }
