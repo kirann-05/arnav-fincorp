@@ -44,10 +44,11 @@ const Navbar = () => {
 
       <div className="nav-links-wrapper">
         <div className={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
-          <NavLink to="#hero" isAnchor>{t('nav.home')}</NavLink>
+          <NavLink to="/">{t('nav.home')}</NavLink>
           <NavLink to="/loans">{t('nav.loanProducts')}</NavLink>
           <NavLink to="/about">{t('nav.about')}</NavLink>
           <NavLink to="#calculator" isAnchor>{t('nav.calculator')}</NavLink>
+          <NavLink to="#testimonials" isAnchor>{t('nav.feedback')}</NavLink>
         </div>
       </div>
 

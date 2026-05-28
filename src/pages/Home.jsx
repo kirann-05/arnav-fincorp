@@ -150,7 +150,7 @@ const Home = () => {
           viewport={{ once: true, margin: '-50px' }}
           variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.1 } } }}
         >
-          {loanCardsData.slice(0, 6).map((card) => {
+          {loanCardsData.slice(0, 3).map((card) => {
             const data = t(`products.${card.key}`, { returnObjects: true })
             const loan = {
               name: data.title,
@@ -171,15 +171,43 @@ const Home = () => {
 
         <motion.div style={{ textAlign: 'center', marginTop: 48 }} {...fadeUp}>
           <Link to="/loans" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-            View All 8 Loan Products →
+            {t('products.exploreMore')} →
           </Link>
         </motion.div>
       </section>
 
       {/* ══ TRUST / STATS — SPLIT LAYOUT ══ */}
       <section className="section trust" id="trust">
-        <div className="trust-split">
-          {/* Left — Narrative */}
+        <div
+          className="trust-split"
+          style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.1fr)', gap: 56, alignItems: 'center' }}
+        >
+          {/* Left — Person image (humanizes the stats) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              position: 'relative',
+              borderRadius: 24,
+              overflow: 'hidden',
+              aspectRatio: '4 / 5',
+              border: '1px solid var(--border-subtle)',
+              boxShadow: 'var(--shadow-elevated)',
+            }}
+          >
+            <img
+              src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=900&q=80"
+              alt="Arnav FinCorp customer receiving the keys to their first car"
+              loading="lazy"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.55) 100%)' }} />
+          </motion.div>
+
+          {/* Right — Narrative + stats stacked */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 36 }}>
           <motion.div className="trust-split-left" {...fadeUp}>
             <span className="section-eyebrow">{t('trust.eyebrow')}</span>
             <h2 className="section-title">
@@ -209,7 +237,13 @@ const Home = () => {
               )
             })}
           </motion.div>
+          </div>
         </div>
+        <style>{`
+          @media (max-width: 900px) {
+            .section.trust .trust-split { grid-template-columns: 1fr !important; gap: 32px !important; }
+          }
+        `}</style>
       </section>
 
       {/* ══ EMI CALCULATOR ══ */}

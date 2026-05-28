@@ -52,7 +52,7 @@ const TestimonialCarousel = ({ items }) => {
             <div className="testimonial-author">
               <div className="testimonial-avatar">
                 <img 
-                  src={`https://i.pravatar.cc/150?u=${item.name}`} 
+                  src={`https://i.pravatar.cc/300?u=${item.name}`}
                   alt={item.name} 
                   className="w-full h-full object-cover rounded-full"
                 />

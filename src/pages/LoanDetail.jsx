@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
@@ -21,10 +21,6 @@ const LoanDetail = () => {
 
   const loan = loanCardsData.find((l) => l.slug === id || l.key === id)
   const data = loan ? t(`products.${loan.key}`, { returnObjects: true }) : null
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [id])
 
   if (!data) {
     return (
@@ -150,15 +146,9 @@ const LoanDetail = () => {
         </motion.div>
 
         {/* ── EMI Calculator anchor ── */}
-        <motion.div id="calculator" {...fadeUp} style={{ scrollMarginTop: 100, marginBottom: 40 }}>
-          <div style={{ textAlign: 'center', marginBottom: 32 }}>
-            <SectionLabel>EMI Calculator</SectionLabel>
-            <h2 className="section-title" style={{ marginTop: 12, fontSize: 'clamp(1.5rem, 2.4vw, 2rem)' }}>
-              Plan your monthly repayment
-            </h2>
-          </div>
-          <EMICalculator />
-        </motion.div>
+        <div id="calculator" style={{ scrollMarginTop: 100, marginBottom: 40 }}>
+          <EMICalculator hideRate fixedRate={parseFloat(String(data.rate).match(/[\d.]+/)?.[0]) || 12} />
+        </div>
 
         {/* ── CTA ── */}
         <motion.div className="about-cta" {...fadeUp}>

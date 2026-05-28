@@ -3,12 +3,12 @@ import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { ArrowRight } from 'lucide-react'
 
-const EMICalculator = () => {
+const EMICalculator = ({ hideRate = false, fixedRate }) => {
   const { t, i18n } = useTranslation()
 
   // Calculator state
   const [loanAmount, setLoanAmount] = useState(1000000)
-  const [interestRate, setInterestRate] = useState(12)
+  const [interestRate, setInterestRate] = useState(fixedRate ?? 12)
   const [loanTenure, setLoanTenure] = useState(5)
 
   // EMI calculation
@@ -53,14 +53,16 @@ const EMICalculator = () => {
               <div className="calc-range-labels"><span>₹50K</span><span>₹50L</span></div>
             </div>
 
-            <div className="calc-input-group">
-              <div className="calc-input-header">
-                <label>{t('calculator.interestRate')}</label>
-                <span className="calc-value">{interestRate}%</span>
+            {!hideRate && (
+              <div className="calc-input-group">
+                <div className="calc-input-header">
+                  <label>{t('calculator.interestRate')}</label>
+                  <span className="calc-value">{interestRate}%</span>
+                </div>
+                <input type="range" min="5" max="24" step="0.5" value={interestRate} onChange={e => setInterestRate(Number(e.target.value))} className="calc-slider" />
+                <div className="calc-range-labels"><span>5%</span><span>24%</span></div>
               </div>
-              <input type="range" min="5" max="24" step="0.5" value={interestRate} onChange={e => setInterestRate(Number(e.target.value))} className="calc-slider" />
-              <div className="calc-range-labels"><span>5%</span><span>24%</span></div>
-            </div>
+            )}
 
             <div className="calc-input-group">
               <div className="calc-input-header">
