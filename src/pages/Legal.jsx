@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { Link, useLocation } from 'react-router-dom'
 import { Shield, FileText, Scale, MessageSquare, Percent, UserCheck, Gavel, BookOpen } from 'lucide-react'
 import ParticleCanvas from '../components/ParticleCanvas'
@@ -31,6 +32,7 @@ const metaStyle = { fontSize: '0.78rem', color: 'var(--text-tertiary)', letterSp
 const ulStyle = { ...pStyle, paddingLeft: 24, listStyle: 'disc' }
 
 const Legal = () => {
+  const { t } = useTranslation()
   const { hash } = useLocation()
   const [activeId, setActiveId] = useState('privacy')
   const sectionRefs = useRef({})
@@ -83,18 +85,17 @@ const Legal = () => {
       <section className="about-hero" style={{ paddingBottom: 60 }}>
         <motion.div {...fadeUp}>
           <nav aria-label="Breadcrumb" style={{ marginBottom: 20, fontSize: '0.78rem', color: 'var(--text-tertiary)', letterSpacing: '0.05em' }}>
-            <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
+            <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>{t('common.home')}</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <span style={{ color: 'var(--text-secondary)' }}>Legal &amp; Policies</span>
+            <span style={{ color: 'var(--text-secondary)' }}>{t('legalPage.breadcrumb')}</span>
           </nav>
-          <SectionLabel>Legal &amp; Policies</SectionLabel>
+          <SectionLabel>{t('legalPage.eyebrow')}</SectionLabel>
           <h1 className="about-hero-title">
-            Transparency, by{' '}
-            <span className="italic-accent">design</span>.
+            {t('legalPage.titleStart')}{' '}
+            <span className="italic-accent">{t('legalPage.titleAccent')}</span>{t('legalPage.titleEnd')}
           </h1>
           <p className="about-hero-sub">
-            Every policy, regulation and right that governs your relationship with Arnav FinCorp — written
-            in compliance with RBI Master Directions and the Fair Practices Code.
+            {t('legalPage.subtitle')}
           </p>
         </motion.div>
       </section>
@@ -103,7 +104,7 @@ const Legal = () => {
       <div className="legal-mobile-toc" style={{ padding: '0 8% 24px', maxWidth: 1400, margin: '0 auto', position: 'relative', zIndex: 2 }}>
         <details style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)', borderRadius: 16, padding: '16px 20px' }}>
           <summary style={{ cursor: 'pointer', fontWeight: 600, fontSize: '0.92rem', color: 'var(--text-primary)', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span>Jump to a policy</span>
+            <span>{t('legalPage.jumpToPolicy')}</span>
             <span style={{ color: 'var(--accent)', fontSize: '0.78rem' }}>▼</span>
           </summary>
           <ul style={{ listStyle: 'none', padding: 0, margin: '16px 0 0' }}>
@@ -370,11 +371,11 @@ const Legal = () => {
 
           {/* ───── CTA ───── */}
           <motion.div className="about-cta" {...fadeUp} style={{ marginTop: 16 }}>
-            <h2>Have a question about your rights?</h2>
-            <p>Our Grievance Redressal Officer responds to every query within 15 working days.</p>
+            <h2>{t('legalPage.ctaTitle')}</h2>
+            <p>{t('legalPage.ctaDesc')}</p>
             <div className="about-cta-btns">
-              <Link to="/contact" className="about-cta-btn-primary">Contact our team →</Link>
-              <a href="mailto:gro@arnavfincorp.in" className="about-cta-btn-secondary">Email the GRO</a>
+              <Link to="/contact" className="about-cta-btn-primary">{t('common.contactTeam')} →</Link>
+              <a href="mailto:gro@arnavfincorp.in" className="about-cta-btn-secondary">{t('common.emailGRO')}</a>
             </div>
           </motion.div>
         </main>
@@ -382,7 +383,7 @@ const Legal = () => {
         {/* ── Sticky TOC sidebar (desktop only) ── */}
         <aside className="legal-toc-desktop" style={{ position: 'sticky', top: 100, alignSelf: 'start' }}>
           <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)', borderRadius: 16, padding: 24 }}>
-            <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--accent)', textTransform: 'uppercase', marginBottom: 16 }}>On this page</p>
+            <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.15em', color: 'var(--accent)', textTransform: 'uppercase', marginBottom: 16 }}>{t('legalPage.onThisPage')}</p>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {policies.map((p, i) => {
                 const isActive = activeId === p.id

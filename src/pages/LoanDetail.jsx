@@ -25,10 +25,10 @@ const LoanDetail = () => {
   if (!data) {
     return (
       <div className="about-page" style={{ paddingTop: 200, textAlign: 'center' }}>
-        <h1 className="section-title" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)' }}>Loan not found</h1>
-        <p style={{ color: 'var(--text-secondary)', marginTop: 16 }}>The loan product you are looking for does not exist.</p>
+        <h1 className="section-title" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)' }}>{t('loanDetail.notFoundTitle')}</h1>
+        <p style={{ color: 'var(--text-secondary)', marginTop: 16 }}>{t('loanDetail.notFoundDesc')}</p>
         <Link to="/loans" className="btn btn-primary" style={{ marginTop: 24, display: 'inline-flex' }}>
-          <ArrowLeft size={18} /> Back to all loans
+          <ArrowLeft size={18} /> {t('loanDetail.notFoundCta')}
         </Link>
       </div>
     )
@@ -47,9 +47,9 @@ const LoanDetail = () => {
             {...fadeUp}
             style={{ marginBottom: 20, fontSize: '0.78rem', color: 'var(--text-tertiary)', letterSpacing: '0.05em' }}
           >
-            <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
+            <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>{t('common.home')}</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
-            <Link to="/loans" style={{ color: 'inherit', textDecoration: 'none' }}>Loan Products</Link>
+            <Link to="/loans" style={{ color: 'inherit', textDecoration: 'none' }}>{t('loanDetail.breadcrumbLoans')}</Link>
             <span style={{ margin: '0 8px', opacity: 0.5 }}>/</span>
             <span style={{ color: 'var(--text-secondary)' }}>{data.title}</span>
           </motion.nav>
@@ -90,10 +90,10 @@ const LoanDetail = () => {
 
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <Link to="/contact" className="btn btn-primary" style={{ padding: '14px 28px' }}>
-                  {t('products.applyNow') || 'Apply Now'} <ArrowRight size={16} />
+                  {t('products.applyNow')} <ArrowRight size={16} />
                 </Link>
                 <a href="#calculator" className="btn btn-outline" style={{ padding: '14px 28px' }}>
-                  Calculate EMI
+                  {t('common.calculateEMI')}
                 </a>
               </div>
             </motion.div>
@@ -127,36 +127,36 @@ const LoanDetail = () => {
         <motion.div className="about-val-grid" {...fadeUp} style={{ marginBottom: 40 }}>
           <div className="about-card">
             <div className="about-card-icon"><CheckCircle2 size={22} /></div>
-            <p className="about-card-eyebrow">Eligibility</p>
-            <h3 className="about-card-title" style={{ fontSize: '1.15rem' }}>Who can apply</h3>
+            <p className="about-card-eyebrow">{t('loanDetail.eligibilityEyebrow')}</p>
+            <h3 className="about-card-title" style={{ fontSize: '1.15rem' }}>{t('loanDetail.eligibilityTitle')}</h3>
             <p className="about-card-body">{data.eligibility}</p>
           </div>
           <div className="about-card">
             <div className="about-card-icon"><FileText size={22} /></div>
-            <p className="about-card-eyebrow">Documents</p>
-            <h3 className="about-card-title" style={{ fontSize: '1.15rem' }}>What you need</h3>
+            <p className="about-card-eyebrow">{t('loanDetail.documentsEyebrow')}</p>
+            <h3 className="about-card-title" style={{ fontSize: '1.15rem' }}>{t('loanDetail.documentsTitle')}</h3>
             <p className="about-card-body">{data.documents}</p>
           </div>
           <div className="about-card">
             <div className="about-card-icon"><Sparkles size={22} /></div>
-            <p className="about-card-eyebrow">Benefits</p>
-            <h3 className="about-card-title" style={{ fontSize: '1.15rem' }}>What you get</h3>
+            <p className="about-card-eyebrow">{t('loanDetail.benefitsEyebrow')}</p>
+            <h3 className="about-card-title" style={{ fontSize: '1.15rem' }}>{t('loanDetail.benefitsTitle')}</h3>
             <p className="about-card-body">{data.benefits}</p>
           </div>
         </motion.div>
 
         {/* ── EMI Calculator anchor ── */}
         <div id="calculator" style={{ scrollMarginTop: 100, marginBottom: 40 }}>
-          <EMICalculator hideRate fixedRate={parseFloat(String(data.rate).match(/[\d.]+/)?.[0]) || 12} />
+          <EMICalculator />
         </div>
 
         {/* ── CTA ── */}
         <motion.div className="about-cta" {...fadeUp}>
-          <h2>Ready to apply for your {data.title}?</h2>
-          <p>Talk to our lending experts today. Fast approval, fair rates, zero hidden charges.</p>
+          <h2>{t('loanDetail.ctaTitle', { name: data.title })}</h2>
+          <p>{t('loanDetail.ctaDesc')}</p>
           <div className="about-cta-btns">
-            <Link to="/contact" className="about-cta-btn-primary">Apply now →</Link>
-            <Link to="/loans" className="about-cta-btn-secondary">Explore other loans</Link>
+            <Link to="/contact" className="about-cta-btn-primary">{t('common.applyNow')} →</Link>
+            <Link to="/loans" className="about-cta-btn-secondary">{t('common.exploreOtherLoans')}</Link>
           </div>
         </motion.div>
       </div>

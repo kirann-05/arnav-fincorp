@@ -1,14 +1,15 @@
 import React, { useState, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 
-const EMICalculator = ({ hideRate = false, fixedRate }) => {
+const EMICalculator = () => {
   const { t, i18n } = useTranslation()
 
   // Calculator state
   const [loanAmount, setLoanAmount] = useState(1000000)
-  const [interestRate, setInterestRate] = useState(fixedRate ?? 12)
+  const [interestRate, setInterestRate] = useState(12)
   const [loanTenure, setLoanTenure] = useState(5)
 
   // EMI calculation
@@ -53,16 +54,14 @@ const EMICalculator = ({ hideRate = false, fixedRate }) => {
               <div className="calc-range-labels"><span>₹50K</span><span>₹50L</span></div>
             </div>
 
-            {!hideRate && (
-              <div className="calc-input-group">
-                <div className="calc-input-header">
-                  <label>{t('calculator.interestRate')}</label>
-                  <span className="calc-value">{interestRate}%</span>
-                </div>
-                <input type="range" min="5" max="24" step="0.5" value={interestRate} onChange={e => setInterestRate(Number(e.target.value))} className="calc-slider" />
-                <div className="calc-range-labels"><span>5%</span><span>24%</span></div>
+            <div className="calc-input-group">
+              <div className="calc-input-header">
+                <label>{t('calculator.interestRate')}</label>
+                <span className="calc-value">{interestRate}%</span>
               </div>
-            )}
+              <input type="range" min="5" max="24" step="0.5" value={interestRate} onChange={e => setInterestRate(Number(e.target.value))} className="calc-slider" />
+              <div className="calc-range-labels"><span>5%</span><span>24%</span></div>
+            </div>
 
             <div className="calc-input-group">
               <div className="calc-input-header">
@@ -88,13 +87,15 @@ const EMICalculator = ({ hideRate = false, fixedRate }) => {
               <span className="calc-result-label">{t('calculator.totalAmount')}</span>
               <span className="calc-result-value">{formatCurrency(totalAmount)}</span>
             </div>
-            <motion.button
-              className="btn btn-primary btn-full"
-              whileHover={{ scale: 1.03, boxShadow: '0 8px 30px rgba(255,140,0,0.4)' }}
-              whileTap={{ scale: 0.97 }}
-            >
-              {t('calculator.applyForLoan')} <ArrowRight size={18} />
-            </motion.button>
+            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+              <Link
+                to="/contact"
+                className="btn btn-primary btn-full"
+                style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8, width: '100%' }}
+              >
+                {t('calculator.applyForLoan')} <ArrowRight size={18} />
+              </Link>
+            </motion.div>
           </div>
         </div>
       </motion.div>

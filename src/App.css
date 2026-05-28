@@ -666,7 +666,7 @@
   .hero-decoration { display: none; }
 }
 @media (max-width: 768px) {
-  .nav-links { display: none; position: fixed; top: 80px; left: 0; right: 0; background: var(--bg-glass-solid); backdrop-filter: blur(30px); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid var(--border-subtle); }
+  .nav-links { display: none; position: fixed; top: 80px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid var(--border-subtle); box-shadow: 0 12px 32px -8px rgba(0,0,0,0.25); }
   .nav-links.open { display: flex; }
   .hamburger { display: flex; }
   .nav-cta { display: none; }
@@ -678,7 +678,9 @@
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .footer-columns { flex-direction: column; gap: 32px; }
   .hero-stats { flex-wrap: wrap; gap: 16px; }
-  .testimonial-card { min-width: 280px; }
+  .testimonial-card { min-width: 86vw; max-width: 86vw; padding: 32px; }
+  .testimonial-avatar { width: 72px; height: 72px; }
+  .testimonial-quote { font-size: 0.95rem; }
 }
 @media (max-width: 480px) {
   .hero-title { font-size: 2rem; }

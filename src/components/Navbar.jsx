@@ -19,7 +19,9 @@ const Navbar = () => {
   }, [])
 
   const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'hi' : 'en')
+    const next = i18n.language === 'en' ? 'hi' : 'en'
+    i18n.changeLanguage(next)
+    try { window.localStorage.setItem('arnav-lang', next) } catch (e) { /* ignore quota errors */ }
   }
 
   const isHomePage = location.pathname === '/'

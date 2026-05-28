@@ -29,7 +29,7 @@ const LoanProducts = () => {
             {t('products.titleStart')} <span className="italic-accent">{t('products.titleAccent')}</span> {t('products.titleEnd')}
           </h1>
           <p style={{ color: 'var(--text-secondary)', marginTop: 16, maxWidth: 560, margin: '16px auto 0' }}>
-            Discover financial solutions tailored for every stage of your life and business journey.
+            {t('loanProductsPage.description')}
           </p>
         </motion.div>
 

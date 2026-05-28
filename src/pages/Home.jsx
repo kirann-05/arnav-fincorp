@@ -216,11 +216,11 @@ const Home = () => {
             <p className="trust-split-desc">{t('trust.description')}</p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center' }}>
               <Link to="/about" className="btn btn-outline" style={{ padding: '10px 24px', fontSize: '0.9rem' }}>
-                Our Story →
+                {t('common.ourStory')} →
               </Link>
               <span className="trust-badge">
                 <span className="trust-badge-dot" />
-                RBI Registered NBFC
+                {t('common.rbiNbfc')}
               </span>
             </div>
           </motion.div>

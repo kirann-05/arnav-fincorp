@@ -212,6 +212,58 @@ const resources = {
           phoneValue: "+91 1800 456 9467",
           emailValue: "contact@arnavfincorp.com"
         }
+      },
+      common: {
+        home: "Home",
+        ourStory: "Our Story",
+        rbiNbfc: "RBI Registered NBFC",
+        viewAllLoans: "View All Loans",
+        applyNow: "Apply Now",
+        exploreOtherLoans: "Explore other loans",
+        calculateEMI: "Calculate EMI",
+        talkToTeam: "Talk to our team",
+        contactTeam: "Contact our team",
+        emailGRO: "Email the GRO"
+      },
+      loanDetail: {
+        breadcrumbLoans: "Loan Products",
+        eligibilityEyebrow: "Eligibility",
+        eligibilityTitle: "Who can apply",
+        documentsEyebrow: "Documents",
+        documentsTitle: "What you need",
+        benefitsEyebrow: "Benefits",
+        benefitsTitle: "What you get",
+        ctaTitle: "Ready to apply for your {{name}}?",
+        ctaDesc: "Talk to our lending experts today. Fast approval, fair rates, zero hidden charges.",
+        notFoundTitle: "Loan not found",
+        notFoundDesc: "The loan product you are looking for does not exist.",
+        notFoundCta: "Back to all loans"
+      },
+      loanProductsPage: {
+        description: "Discover financial solutions tailored for every stage of your life and business journey."
+      },
+      aboutPage: {
+        eyebrow: "About Us",
+        titleStart: "Born in Bikaner. Built for",
+        titleAccent: "Bharat's",
+        titleEnd: "backbone.",
+        subtitle: "Since 2012, Arnav FinCorp has financed the kirana owners, mandi traders, women entrepreneurs and first-generation borrowers of Tier 2 Bharat — over 12,400 families across Rajasthan, Gujarat, Punjab, Haryana, Madhya Pradesh and Uttar Pradesh.",
+        ctaTitle: "Ready to take the next step?",
+        ctaDesc: "Talk to our lending experts today. Quick approval, fair rates, zero hidden charges.",
+        ctaPrimary: "Talk to our team",
+        ctaSecondary: "Explore All Loans"
+      },
+      legalPage: {
+        breadcrumb: "Legal & Policies",
+        eyebrow: "Legal & Policies",
+        titleStart: "Transparency, by",
+        titleAccent: "design",
+        titleEnd: ".",
+        subtitle: "Every policy, regulation and right that governs your relationship with Arnav FinCorp — written in compliance with RBI Master Directions and the Fair Practices Code.",
+        jumpToPolicy: "Jump to a policy",
+        onThisPage: "On this page",
+        ctaTitle: "Have a question about your rights?",
+        ctaDesc: "Our Grievance Redressal Officer responds to every query within 15 working days."
       }
     }
   },
@@ -233,13 +285,13 @@ const resources = {
         titleEnd: "महत्वाकांक्षा का।",
         subtitle: "होम, बिज़नेस और पर्सनल क्रेडिट — निष्पक्ष, पारदर्शी और तेज़ — भारत की आकांक्षाओं के लिए।",
         cta1: "EMI कैलकुलेट करें",
-        cta2: "गोल्ड लोन आज़माएं",
-        stat1Value: "₹0",
-        stat1Label: "EMI",
-        stat2Value: "APY",
-        stat2Label: "12%",
-        stat3Value: "₹ 8 लाख",
-        stat3Label: "औसत वितरण"
+        cta2: "सभी ऋण देखें",
+        stat1Value: "8.5%",
+        stat1Label: "ब्याज दर से",
+        stat2Value: "₹325 करोड़+",
+        stat2Label: "वितरित ऋण",
+        stat3Value: "48 घंटे",
+        stat3Label: "औसत मंजूरी"
       },
       products: {
         eyebrow: "हमारे उत्पाद",
@@ -426,16 +478,70 @@ const resources = {
           phoneValue: "+91 1800 456 9467",
           emailValue: "contact@arnavfincorp.com"
         }
+      },
+      common: {
+        home: "होम",
+        ourStory: "हमारी कहानी",
+        rbiNbfc: "RBI पंजीकृत NBFC",
+        viewAllLoans: "सभी ऋण देखें",
+        applyNow: "अभी आवेदन करें",
+        exploreOtherLoans: "अन्य ऋण देखें",
+        calculateEMI: "EMI गणना करें",
+        talkToTeam: "हमारी टीम से बात करें",
+        contactTeam: "हमारी टीम से संपर्क करें",
+        emailGRO: "GRO को ईमेल करें"
+      },
+      loanDetail: {
+        breadcrumbLoans: "ऋण उत्पाद",
+        eligibilityEyebrow: "पात्रता",
+        eligibilityTitle: "कौन आवेदन कर सकता है",
+        documentsEyebrow: "दस्तावेज़",
+        documentsTitle: "आपको क्या चाहिए",
+        benefitsEyebrow: "लाभ",
+        benefitsTitle: "आपको क्या मिलेगा",
+        ctaTitle: "अपने {{name}} के लिए आवेदन करने को तैयार हैं?",
+        ctaDesc: "आज ही हमारे ऋण विशेषज्ञों से बात करें। त्वरित मंजूरी, निष्पक्ष दरें, कोई छिपे शुल्क नहीं।",
+        notFoundTitle: "ऋण नहीं मिला",
+        notFoundDesc: "आप जिस ऋण उत्पाद की तलाश कर रहे हैं वह मौजूद नहीं है।",
+        notFoundCta: "सभी ऋणों पर वापस जाएँ"
+      },
+      loanProductsPage: {
+        description: "जीवन और व्यवसाय की हर अवस्था के लिए बने वित्तीय समाधान खोजें।"
+      },
+      aboutPage: {
+        eyebrow: "हमारे बारे में",
+        titleStart: "बीकानेर में जन्मे।",
+        titleAccent: "भारत की",
+        titleEnd: "रीढ़ के लिए बने।",
+        subtitle: "2012 से, अर्णव फिनकॉर्प ने टियर-2 भारत के किराना मालिकों, मंडी व्यापारियों, महिला उद्यमियों और पहली पीढ़ी के उधारकर्ताओं को वित्त प्रदान किया है — राजस्थान, गुजरात, पंजाब, हरियाणा, मध्य प्रदेश और उत्तर प्रदेश में 12,400 से अधिक परिवार।",
+        ctaTitle: "अगला कदम उठाने को तैयार हैं?",
+        ctaDesc: "आज ही हमारे ऋण विशेषज्ञों से बात करें। तेज़ मंजूरी, निष्पक्ष दरें, कोई छिपे शुल्क नहीं।",
+        ctaPrimary: "हमारी टीम से बात करें",
+        ctaSecondary: "सभी ऋण देखें"
+      },
+      legalPage: {
+        breadcrumb: "कानूनी और नीतियाँ",
+        eyebrow: "कानूनी और नीतियाँ",
+        titleStart: "पारदर्शिता,",
+        titleAccent: "मूल",
+        titleEnd: "रूप से।",
+        subtitle: "हर नीति, नियम और अधिकार जो अर्णव फिनकॉर्प के साथ आपके संबंध को नियंत्रित करते हैं — RBI मास्टर निर्देशों और उचित व्यवहार संहिता के अनुपालन में लिखे गए।",
+        jumpToPolicy: "किसी नीति पर जाएँ",
+        onThisPage: "इस पृष्ठ पर",
+        ctaTitle: "अपने अधिकारों के बारे में कोई प्रश्न है?",
+        ctaDesc: "हमारे शिकायत निवारण अधिकारी हर प्रश्न का 15 कार्य दिवसों के भीतर उत्तर देते हैं।"
       }
     }
   }
 };
 
+const savedLang = typeof window !== 'undefined' ? window.localStorage.getItem('arnav-lang') : null;
+
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'en',
+    lng: savedLang === 'hi' || savedLang === 'en' ? savedLang : 'en',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false

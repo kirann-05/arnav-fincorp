@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { TrendingUp, Eye, Shield, Zap, BadgeCheck, Heart, Users, MapPin } from 'lucide-react'
 import ParticleCanvas from '../components/ParticleCanvas'
 import SectionLabel from '../components/SectionLabel'
@@ -54,6 +55,7 @@ const values = [
 ]
 
 const About = () => {
+  const { t } = useTranslation()
   return (
     <div className="about-page">
       <ParticleCanvas />
@@ -61,16 +63,14 @@ const About = () => {
       {/* ══ HERO ══ */}
       <section className="about-hero">
         <motion.div {...fadeUp}>
-          <SectionLabel>About Us</SectionLabel>
+          <SectionLabel>{t('aboutPage.eyebrow')}</SectionLabel>
           <h1 className="about-hero-title">
-            Born in Bikaner. Built for{' '}
-            <span className="italic-accent">Bharat&apos;s</span>{' '}
-            backbone.
+            {t('aboutPage.titleStart')}{' '}
+            <span className="italic-accent">{t('aboutPage.titleAccent')}</span>{' '}
+            {t('aboutPage.titleEnd')}
           </h1>
           <p className="about-hero-sub">
-            Since 2012, Arnav FinCorp has financed the kirana owners, mandi traders, women entrepreneurs and
-            first-generation borrowers of Tier 2 Bharat — over 12,400 families across Rajasthan, Gujarat,
-            Punjab, Haryana, Madhya Pradesh and Uttar Pradesh.
+            {t('aboutPage.subtitle')}
           </p>
         </motion.div>
       </section>
@@ -188,11 +188,11 @@ const About = () => {
 
         {/* ── Row 4: CTA ── */}
         <motion.div className="about-cta" {...fadeUp}>
-          <h2>Ready to take the next step?</h2>
-          <p>Talk to our lending experts today. Quick approval, fair rates, zero hidden charges.</p>
+          <h2>{t('aboutPage.ctaTitle')}</h2>
+          <p>{t('aboutPage.ctaDesc')}</p>
           <div className="about-cta-btns">
-            <Link to="/contact" className="about-cta-btn-primary">Talk to our team →</Link>
-            <Link to="/loans" className="about-cta-btn-secondary">Explore All Loans</Link>
+            <Link to="/contact" className="about-cta-btn-primary">{t('aboutPage.ctaPrimary')} →</Link>
+            <Link to="/loans" className="about-cta-btn-secondary">{t('aboutPage.ctaSecondary')}</Link>
           </div>
         </motion.div>
 
