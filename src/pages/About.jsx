@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { TrendingUp, Eye, Shield, Zap, BadgeCheck, Heart, Users, MapPin } from 'lucide-react'
+import { TrendingUp, Eye, Shield, Zap, BadgeCheck, Heart, Users, MapPin, Briefcase, Wallet, Headphones, Handshake } from 'lucide-react'
 import ParticleCanvas from '../components/ParticleCanvas'
 import SectionLabel from '../components/SectionLabel'
 
@@ -19,6 +19,29 @@ const milestones = [
   { year: '2019', title: 'RBI NBFC Licence', desc: 'Received RBI registration as a Non-Banking Financial Company (NBFC-ICC), formalising 7 years of community lending.' },
   { year: '2022', title: 'Digital + Desi', desc: 'Launched the Arnav Saathi app in Hindi and Marwari — kept the human officer, added 48-hour digital approvals.' },
   { year: '2025', title: '₹325 Cr+ • 48 Branches', desc: 'Serving 12,400+ families across 6 states, still headquartered in Bikaner — Tier 2 Bharat deserves Tier 1 credit.' },
+]
+
+const teams = [
+  {
+    icon: <Briefcase size={22} />,
+    title: 'Leadership',
+    body: 'Founder Shri Mahendra Singh Rathore leads a board of seasoned NBFC veterans, ex-bankers and Tier 2 business owners — together carrying over 90 years of lending experience across rural and semi-urban India.',
+  },
+  {
+    icon: <Wallet size={22} />,
+    title: 'Credit & Risk',
+    body: 'A 28-member underwriting team trained on cash-flow analysis rather than CIBIL-only scoring. Every loan above ₹10 lakh is reviewed by a regional credit committee, not a black-box algorithm.',
+  },
+  {
+    icon: <Handshake size={22} />,
+    title: 'Field Operations',
+    body: '140+ field officers across 48 branches. Hired locally — fluent in Marwari, Mewari, Haryanvi and Brij — they visit shops, farms and homes, often arriving before paperwork is even ready.',
+  },
+  {
+    icon: <Headphones size={22} />,
+    title: 'Customer Care',
+    body: 'Named relationship managers, not call-centre queues. The officer who approves your loan is the same person you can call directly — in your language, on a working mobile number.',
+  },
 ]
 
 const values = [
@@ -78,8 +101,12 @@ const About = () => {
       {/* ══ BODY GRID ══ */}
       <div className="about-grid">
 
-        {/* ── Founder Story Card ── */}
-        <motion.div className="about-card" {...fadeUp} style={{ marginBottom: 24, maxWidth: 880, marginLeft: 'auto', marginRight: 'auto' }}>
+        {/* ── Founder Story Card — lifted up to peek over hero, creating scroll incentive ── */}
+        <motion.div
+          className="about-card"
+          {...fadeUp}
+          style={{ marginBottom: 24, maxWidth: 880, marginLeft: 'auto', marginRight: 'auto', marginTop: -64, position: 'relative', zIndex: 2 }}
+        >
           <div className="about-card-icon">
             <Heart size={22} />
           </div>
@@ -101,8 +128,62 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* ── Row 1: Mission + Vision ── */}
-        <div className="about-mv-grid">
+        {/* ── Our Teams (NEW) ── */}
+        <motion.div {...fadeUp} style={{ marginTop: 40 }}>
+          <div style={{ textAlign: 'center', marginBottom: 32 }}>
+            <SectionLabel>Our Teams</SectionLabel>
+            <h2 className="section-title" style={{ marginTop: 12, fontSize: 'clamp(1.5rem, 2.4vw, 2rem)' }}>The people behind every approval.</h2>
+          </div>
+          <div className="about-val-grid">
+            {teams.map((tm) => (
+              <div key={tm.title} className="about-card">
+                <div className="about-card-icon">{tm.icon}</div>
+                <h3 className="about-card-title" style={{ fontSize: '1.15rem' }}>{tm.title}</h3>
+                <p className="about-card-body">{tm.body}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* ── Our Values (3 col) ── */}
+        <motion.div {...fadeUp} style={{ marginTop: 48 }}>
+          <div style={{ textAlign: 'center', marginBottom: 32 }}>
+            <SectionLabel>Our Values</SectionLabel>
+            <h2 className="section-title" style={{ marginTop: 12, fontSize: 'clamp(1.5rem, 2.4vw, 2rem)' }}>What we stand for</h2>
+          </div>
+          <div className="about-val-grid">
+            {values.map((v) => (
+              <div key={v.title} className="about-card">
+                <div className="about-card-icon">{v.icon}</div>
+                <h3 className="about-card-title" style={{ fontSize: '1.15rem' }}>{v.title}</h3>
+                <p className="about-card-body">{v.body}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* ── Milestone Timeline ── */}
+        <motion.div className="about-timeline" {...fadeUp}>
+          <div className="about-timeline-header">
+            <SectionLabel>Our Journey</SectionLabel>
+            <h2 className="section-title" style={{ marginTop: 12, fontSize: 'clamp(1.5rem, 2.4vw, 2rem)' }}>13 years of trust, one milestone at a time.</h2>
+          </div>
+          <div className="about-timeline-track">
+            {milestones.map((m) => (
+              <div key={m.year} className="about-timeline-item">
+                <div className="about-timeline-dot">
+                  <div className="about-timeline-dot-inner" />
+                </div>
+                <span className="about-timeline-year">{m.year}</span>
+                <span className="about-timeline-title">{m.title}</span>
+                <span className="about-timeline-desc">{m.desc}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* ── Mission + Vision (moved here, after Journey) ── */}
+        <div className="about-mv-grid" style={{ marginTop: 16 }}>
           <motion.div className="about-card" {...fadeUp}>
             <div className="about-card-icon">
               <TrendingUp size={22} />
@@ -130,63 +211,7 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* ── Row: Where we are ── */}
-        <motion.div className="about-card" {...fadeUp} style={{ marginBottom: 24, maxWidth: 880, marginLeft: 'auto', marginRight: 'auto' }}>
-          <div className="about-card-icon">
-            <MapPin size={22} />
-          </div>
-          <p className="about-card-eyebrow">Headquartered in Bikaner, Rajasthan</p>
-          <h2 className="about-card-title">A Tier 2 NBFC for Tier 2 Bharat.</h2>
-          <p className="about-card-body">
-            Our head office sits opposite the historic Junagarh Fort in Bikaner — not in a glass tower in Gurugram.
-            That is deliberate. We hire our branch managers from within 50 km of every branch we open. They speak
-            Marwari, Mewari, Haryanvi, Brij — the actual languages of our borrowers. They know that the wheat-buying
-            season needs a different EMI calendar than the wedding-shopping season. This is underwriting that
-            metro-headquartered fintechs cannot replicate, no matter how good their models are.
-            <br /><br />
-            <strong>48 branches</strong> across Rajasthan, Gujarat, Punjab, Haryana, Madhya Pradesh and Uttar Pradesh.
-            Every single one within walking distance of a working mandi or mohalla market.
-          </p>
-        </motion.div>
-
-        {/* ── Row 2: Values (3 col) ── */}
-        <motion.div {...fadeUp}>
-          <div style={{ textAlign: 'center', marginBottom: 32 }}>
-            <SectionLabel>Our Values</SectionLabel>
-            <h2 className="section-title" style={{ marginTop: 12, fontSize: 'clamp(1.5rem, 2.4vw, 2rem)' }}>What we stand for</h2>
-          </div>
-          <div className="about-val-grid">
-            {values.map((v) => (
-              <div key={v.title} className="about-card">
-                <div className="about-card-icon">{v.icon}</div>
-                <h3 className="about-card-title" style={{ fontSize: '1.15rem' }}>{v.title}</h3>
-                <p className="about-card-body">{v.body}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* ── Row 3: Milestone Timeline ── */}
-        <motion.div className="about-timeline" {...fadeUp}>
-          <div className="about-timeline-header">
-            <SectionLabel>Our Journey</SectionLabel>
-            <h2 className="section-title" style={{ marginTop: 12, fontSize: 'clamp(1.5rem, 2.4vw, 2rem)' }}>13 years of trust, one milestone at a time.</h2>
-          </div>
-          <div className="about-timeline-track">
-            {milestones.map((m) => (
-              <div key={m.year} className="about-timeline-item">
-                <div className="about-timeline-dot">
-                  <div className="about-timeline-dot-inner" />
-                </div>
-                <span className="about-timeline-year">{m.year}</span>
-                <span className="about-timeline-title">{m.title}</span>
-                <span className="about-timeline-desc">{m.desc}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* ── Row 4: CTA ── */}
+        {/* ── CTA ── */}
         <motion.div className="about-cta" {...fadeUp}>
           <h2>{t('aboutPage.ctaTitle')}</h2>
           <p>{t('aboutPage.ctaDesc')}</p>
