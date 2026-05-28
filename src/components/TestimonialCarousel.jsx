@@ -1,43 +1,26 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
+// Curated portraits of Indian / Tier-2-3 Bharat residents — paired by index to testimonial items
+// Mix of verified Unsplash Indian portraits + randomuser.me Indian-nationality portraits (stable, no rate limit)
+const TESTIMONIAL_PORTRAITS = [
+  'https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=300&h=300&fit=crop&crop=faces&q=80', // Aarti Sharma — woman in saree
+  'https://images.unsplash.com/photo-1542178243-bc20204b769f?w=300&h=300&fit=crop&crop=faces&q=80',  // Rajesh Patel — Indian gentleman
+  'https://randomuser.me/api/portraits/women/65.jpg', // Sunita Devi
+  'https://randomuser.me/api/portraits/men/52.jpg',   // Vikram Singh
+  'https://randomuser.me/api/portraits/women/79.jpg', // Meera Nair
+];
+
 const TestimonialCarousel = ({ items }) => {
-  const scrollRef = useRef(null);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-    let animId;
-    let scrollPos = container.scrollLeft;
-
-    const step = () => {
-      if (!isPaused && container) {
-        scrollPos += 0.8; // Increased speed slightly
-        if (scrollPos >= container.scrollWidth / 2) {
-          scrollPos = 0;
-        }
-        container.scrollLeft = scrollPos;
-      }
-      animId = requestAnimationFrame(step);
-    };
-    animId = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(animId);
-  }, [isPaused]);
-
-  // Clone items for seamless loop
-  const displayItems = items ? [...items, ...items] : [];
+  const itemsWithPortraits = items
+    ? items.map((it, idx) => ({ ...it, portrait: TESTIMONIAL_PORTRAITS[idx % TESTIMONIAL_PORTRAITS.length] }))
+    : [];
+  // Clone for seamless infinite marquee
+  const displayItems = [...itemsWithPortraits, ...itemsWithPortraits];
 
   return (
-    <div
-      className="testimonial-track-container"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      <div
-        className="testimonial-track"
-        ref={scrollRef}
-      >
+    <div className="testimonial-track-container">
+      <div className="testimonial-track testimonial-track--marquee">
         {displayItems.map((item, i) => (
           <motion.div
             key={i}
@@ -51,10 +34,12 @@ const TestimonialCarousel = ({ items }) => {
             <p className="testimonial-quote">{item.quote}</p>
             <div className="testimonial-author">
               <div className="testimonial-avatar">
-                <img 
-                  src={`https://i.pravatar.cc/300?u=${item.name}`}
-                  alt={item.name} 
+                <img
+                  src={item.portrait}
+                  alt={item.name}
+                  loading="lazy"
                   className="w-full h-full object-cover rounded-full"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
                 />
               </div>
               <div>
