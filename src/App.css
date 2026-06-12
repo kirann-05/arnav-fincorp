@@ -620,14 +620,7 @@
   margin-bottom: 28px; font-style: italic;
   display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden;
 }
-.testimonial-author { display: flex; align-items: center; gap: 16px; }
-.testimonial-avatar {
-  width: 96px; height: 96px; border-radius: 50%;
-  background: var(--accent); color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 1.2rem; flex-shrink: 0;
-  overflow: hidden; border: 3px solid var(--accent);
-}
+.testimonial-author { display: flex; align-items: center; gap: 16px; padding-top: 16px; border-top: 1px solid var(--border-subtle); }
 .testimonial-name { font-size: 1.05rem; font-weight: 600; }
 .testimonial-location { font-size: 0.85rem; color: var(--text-tertiary); }
 .testimonial-type {
@@ -679,13 +672,22 @@
   .footer-top { flex-direction: column; }
   .hero-decoration { display: none; }
 }
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .hero-content-right { order: -1; max-width: 520px; margin: 0 auto; width: 100%; }
+  .hero-carousel-container { aspect-ratio: 16 / 10; border-radius: 24px; }
+  .hero-content-left { max-width: 100%; }
+}
 @media (max-width: 768px) {
   .nav-links { display: none; position: fixed; top: 80px; left: 0; right: 0; background: var(--bg-primary); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid var(--border-subtle); box-shadow: 0 12px 32px -8px rgba(0,0,0,0.25); }
   .nav-links.open { display: flex; }
   .hamburger { display: flex; }
   .nav-cta { display: none; }
-  .hero { padding: 120px 6% 60px; }
+  .hero { padding: 110px 6% 56px; }
   .hero-title { font-size: 2.4rem; }
+  .hero-carousel-container { aspect-ratio: 4 / 3; border-radius: 20px; }
+  .hero-subtitle { font-size: 1rem; margin-bottom: 28px; }
+  .hero-badge { margin-bottom: 24px; }
   .flip-grid { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: 1fr; gap: 24px; }
   .flip-card { height: 460px; }
@@ -693,7 +695,6 @@
   .footer-columns { flex-direction: column; gap: 32px; }
   .hero-stats { flex-wrap: wrap; gap: 16px; }
   .testimonial-card { min-width: 86vw; max-width: 86vw; padding: 32px; }
-  .testimonial-avatar { width: 72px; height: 72px; }
   .testimonial-quote { font-size: 0.95rem; }
 }
 @media (max-width: 480px) {
