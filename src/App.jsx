@@ -1,16 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { useTheme } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import StickyMobileCTA from './components/StickyMobileCTA'
 import Home from './pages/Home'
-import Contact from './pages/Contact'
-import About from './pages/About'
-import LoanProducts from './pages/LoanProducts'
-import LoanDetail from './pages/LoanDetail'
-import Legal from './pages/Legal'
 import './App.css'
+
+const Contact = lazy(() => import('./pages/Contact'))
+const About = lazy(() => import('./pages/About'))
+const LoanProducts = lazy(() => import('./pages/LoanProducts'))
+const LoanDetail = lazy(() => import('./pages/LoanDetail'))
+const Legal = lazy(() => import('./pages/Legal'))
+
+const RouteFallback = () => (
+  <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-tertiary)', fontSize: '0.9rem' }}>
+    Loading…
+  </div>
+)
 
 // ScrollToTop component to handle route changes
 const ScrollToTop = () => {
@@ -42,14 +49,16 @@ const App = () => {
         <ScrollToTop />
         <Navbar />
         <StickyMobileCTA />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/loans" element={<LoanProducts />} />
-          <Route path="/loan/:id" element={<LoanDetail />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/legal" element={<Legal />} />
-        </Routes>
+        <Suspense fallback={<RouteFallback />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/loans" element={<LoanProducts />} />
+            <Route path="/loan/:id" element={<LoanDetail />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/legal" element={<Legal />} />
+          </Routes>
+        </Suspense>
         <Footer />
       </div>
     </Router>

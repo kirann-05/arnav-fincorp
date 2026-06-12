@@ -36,6 +36,8 @@ const HeroCarousel = () => {
           transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
           loading="eager"
+          fetchpriority={index === 0 ? 'high' : 'auto'}
+          decoding="async"
         />
       </AnimatePresence>
       {/* gradient overlay */}

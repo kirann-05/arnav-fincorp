@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
 const ParticleCanvas = () => {
@@ -7,12 +7,29 @@ const ParticleCanvas = () => {
   const themeRef = useRef(theme);
   const mouseRef = useRef({ x: -1000, y: -1000 });
   const animRef = useRef(null);
+  const [shouldRun, setShouldRun] = useState(false);
 
   useEffect(() => { themeRef.current = theme; }, [theme]);
 
+  // Skip on mobile/touch, low-power devices, and when user prefers reduced motion
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const lowCores = (navigator.hardwareConcurrency || 8) < 4;
+    if (isMobile || reducedMotion || lowCores) return;
+    setShouldRun(true);
+  }, []);
+
+  useEffect(() => {
+    if (!shouldRun) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    // Only animate while canvas is on screen
+    let isVisible = true;
+    const io = new IntersectionObserver(([e]) => { isVisible = e.isIntersecting; }, { threshold: 0 });
+    io.observe(canvas);
     const ctx = canvas.getContext('2d');
     let w = canvas.offsetWidth, h = canvas.offsetHeight;
     canvas.width = w; canvas.height = h;
@@ -24,6 +41,7 @@ const ParticleCanvas = () => {
       pts[i].br = pts[i].r;
     }
     function animate() {
+      if (!isVisible) { animRef.current = requestAnimationFrame(animate); return; }
       ctx.clearRect(0,0,w,h);
       const dk = themeRef.current === 'dark';
       pts.forEach(p => {
@@ -53,9 +71,11 @@ const ParticleCanvas = () => {
     canvas.addEventListener('mousemove',onMove);
     canvas.addEventListener('mouseleave',onLeave);
     return()=>{cancelAnimationFrame(animRef.current);window.removeEventListener('resize',onResize);
-      canvas.removeEventListener('mousemove',onMove);canvas.removeEventListener('mouseleave',onLeave);};
-  }, []);
+      canvas.removeEventListener('mousemove',onMove);canvas.removeEventListener('mouseleave',onLeave);
+      io.disconnect();};
+  }, [shouldRun]);
 
+  if (!shouldRun) return null;
   return <canvas ref={canvasRef} style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',pointerEvents:'auto',zIndex:0}} />;
 };
 
