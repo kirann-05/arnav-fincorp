@@ -233,7 +233,7 @@ const resources = {
       },
       aboutPage: {
         eyebrow: "About Us",
-        titleStart: "Born in Bikaner. Built for",
+        titleStart: "Born in Bhilwara. Built for",
         titleAccent: "Bharat's",
         titleEnd: "backbone.",
         subtitle: "Since 2016, Arnav FinCorp has been quietly rewriting what credit looks like for Rajasthan's heartland. We finance the textile traders of Bhilwara, the shopkeepers of the surrounding mandi towns, and the first-generation borrowers no metro bank will underwrite. From our headquarters at Navkar Plaza on Hari Seva Marg, we have grown to three branches across Rajasthan — and crossed ₹200 crore in disbursements to over 1,800 families. Through every chapter of that growth, one promise has not changed: cash flow is real, character is verifiable, and the Bharat that built India deserves credit on its own terms.",
@@ -488,7 +488,7 @@ const resources = {
       },
       aboutPage: {
         eyebrow: "हमारे बारे में",
-        titleStart: "बीकानेर में जन्मे।",
+        titleStart: "भीलवाड़ा में जन्मे।",
         titleAccent: "भारत की",
         titleEnd: "रीढ़ के लिए बने।",
         subtitle: "2016 से, अर्णव फिनकॉर्प चुपचाप उस तरीके को फिर से लिख रहा है जिससे राजस्थान के दिल को ऋण मिलता है। हम भीलवाड़ा के वस्त्र व्यापारियों, आसपास की मंडी कस्बों के दुकानदारों और उन पहली पीढ़ी के उधारकर्ताओं को वित्त देते हैं जिन्हें कोई मेट्रो बैंक नहीं अपनाएगा। हरि सेवा मार्ग, नवकार प्लाज़ा स्थित हमारे मुख्यालय से, हम राजस्थान में तीन शाखाओं तक बढ़े हैं — और 1,800 से अधिक परिवारों को ₹200 करोड़ से ज़्यादा वितरित किया है। इस यात्रा के हर अध्याय में एक वादा नहीं बदला: नकदी प्रवाह वास्तविक है, चरित्र सत्यापन योग्य है, और जिस भारत ने इंडिया को बनाया वह अपनी शर्तों पर ऋण का हकदार है।",
