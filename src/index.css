@@ -147,6 +147,16 @@ img {
   color: var(--accent);
 }
 
+/* Devanagari has no italic glyphs in Playfair, so the browser falls back
+   font-by-font and collapses whitespace across the span boundary. Render
+   the accent in the base font (bold + saffron) when the page is in Hindi. */
+:lang(hi) .italic-accent {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--accent);
+}
+
 /* ═══════════════════════════════════════════
    GLASS MORPHISM
    ═══════════════════════════════════════════ */

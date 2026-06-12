@@ -21,8 +21,14 @@ const Navbar = () => {
   const toggleLanguage = () => {
     const next = i18n.language === 'en' ? 'hi' : 'en'
     i18n.changeLanguage(next)
+    document.documentElement.lang = next
     try { window.localStorage.setItem('arnav-lang', next) } catch (e) { /* ignore quota errors */ }
   }
+
+  // Keep <html lang> in sync on first render (after persisted i18n init)
+  useEffect(() => {
+    document.documentElement.lang = i18n.language || 'en'
+  }, [i18n.language])
 
   const isHomePage = location.pathname === '/'
 
