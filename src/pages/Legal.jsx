@@ -194,7 +194,7 @@ const Legal = () => {
             <p style={pStyle}>EMI calculators, eligibility checkers and rate tools on our website are indicative only and do not constitute a binding offer. Actual sanction terms are governed solely by the executed loan agreement.</p>
 
             <h3 style={h3Style}>8. Governing law and jurisdiction</h3>
-            <p style={pStyle}>These terms are governed by the laws of India. All disputes shall be subject to the exclusive jurisdiction of the courts at Bikaner, Rajasthan, without prejudice to the rights of customers under the Consumer Protection Act, 2019 and the RBI Integrated Ombudsman Scheme, 2021.</p>
+            <p style={pStyle}>These terms are governed by the laws of India. All disputes shall be subject to the exclusive jurisdiction of the courts at Bhilwara, Rajasthan, without prejudice to the rights of customers under the Consumer Protection Act, 2019 and the RBI Integrated Ombudsman Scheme, 2021.</p>
           </section>
 
           {/* ───── 3. FAIR PRACTICES CODE ───── */}
@@ -234,32 +234,32 @@ const Legal = () => {
             <h3 style={h3Style}>Level 1 — Branch / Customer Care</h3>
             <p style={pStyle}>Customers may register their complaint at the branch of disbursement or contact our Customer Care:</p>
             <ul style={ulStyle}>
-              <li>Toll-Free: 1800-XXX-XXXX (Mon–Sat, 9:00 AM – 7:00 PM IST)</li>
-              <li>Email: care@arnavfincorp.in</li>
+              <li>Phone: +91 88751-20888 (WhatsApp) · 01482-238388 (Landline) — Mon–Sat, 9:00 AM – 7:00 PM IST</li>
+              <li>Email: arnavfincorp@gmail.com</li>
               <li>Resolution timeline: within 7 working days</li>
             </ul>
 
             <h3 style={h3Style}>Level 2 — Grievance Redressal Officer</h3>
             <p style={pStyle}>If unresolved at Level 1, or if the response is unsatisfactory, escalate to:</p>
             <ul style={ulStyle}>
-              <li>Shri Vikas Agarwal, Grievance Redressal Officer</li>
-              <li>Arnav FinCorp Private Limited, Junagarh Road, Bikaner — 334001, Rajasthan</li>
-              <li>Email: gro@arnavfincorp.in &nbsp;·&nbsp; Phone: +91-151-XXXXXXX</li>
+              <li>Grievance Redressal Officer</li>
+              <li>Arnav FinCorp Private Limited, G-14, Navkar Plaza, Hari Seva Marg, Bhilwara — 311001, Rajasthan</li>
+              <li>Email: arnavfincorp@gmail.com &nbsp;·&nbsp; Phone: 01482-238388</li>
               <li>Resolution timeline: within 15 working days</li>
             </ul>
 
             <h3 style={h3Style}>Level 3 — Principal Nodal Officer</h3>
             <p style={pStyle}>If still unresolved within 30 days from the date of first complaint:</p>
             <ul style={ulStyle}>
-              <li>Smt. Pooja Rathore, Principal Nodal Officer</li>
-              <li>Email: pno@arnavfincorp.in &nbsp;·&nbsp; Phone: +91-151-XXXXXXX</li>
+              <li>Principal Nodal Officer</li>
+              <li>Email: arnavfincorp@gmail.com &nbsp;·&nbsp; Phone: 01482-238388</li>
             </ul>
 
             <h3 style={h3Style}>Level 4 — RBI Integrated Ombudsman</h3>
             <p style={pStyle}>If the complaint is not resolved within 30 days, you may approach the RBI Ombudsman:</p>
             <ul style={ulStyle}>
               <li>Online: <a href="https://cms.rbi.org.in" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)' }}>cms.rbi.org.in</a></li>
-              <li>Toll-Free: 14448 &nbsp;·&nbsp; Email: CRPC@rbi.org.in</li>
+              <li>Toll-Free: 14448 &nbsp;·&nbsp; Email: crpc@rbi.org.in</li>
               <li>Postal: Centralised Receipt and Processing Centre, RBI, 4th Floor, Sector 17, Chandigarh — 160017</li>
             </ul>
           </section>
@@ -276,19 +276,19 @@ const Legal = () => {
             <h3 style={h3Style}>2. Range of interest rates</h3>
             <p style={pStyle}>The annualised interest rate (reducing balance method) charged across our product portfolio ranges between <strong>8.50% and 26.00% per annum</strong>:</p>
             <ul style={ulStyle}>
-              <li>Home Loan — 8.50% to 12.50% p.a.</li>
-              <li>Loan Against Property — 9.50% to 14.00% p.a.</li>
-              <li>Business Loan (Secured) — 11.00% to 18.00% p.a.</li>
-              <li>MSME Loan — 12.00% to 20.00% p.a.</li>
-              <li>Personal Loan — 14.00% to 24.00% p.a.</li>
-              <li>Gold Loan — 9.50% to 16.00% p.a.</li>
+              <li>Home Loan — from 8.25% p.a.</li>
+              <li>Loan Against Property — from 10.50% p.a.</li>
+              <li>Business Loan — 15% p.a.</li>
+              <li>Personal Loan — 15% p.a.</li>
+              <li>Gold Loan — 15% p.a.</li>
+              <li>Vehicle Loan (2W / 4W) — 12% p.a.</li>
             </ul>
 
             <h3 style={h3Style}>3. Communication</h3>
             <p style={pStyle}>The applicable interest rate, along with the annualised rate of interest and method of application, is explicitly communicated to the borrower in the sanction letter and Key Fact Statement (KFS) before disbursement.</p>
 
             <h3 style={h3Style}>4. Penal charges</h3>
-            <p style={pStyle}>In line with the RBI circular on Fair Lending Practice — Penal Charges in Loan Accounts (August 2023), penal charges for delayed payment are treated as "penal charges" (not penal interest), are reasonable, and do not compound. Current penal charge: 2% per month on overdue EMI, applied flat.</p>
+            <p style={pStyle}>In line with the RBI circular on Fair Lending Practice — Penal Charges in Loan Accounts (August 2023), penal charges for delayed payment are treated as "penal charges" (not penal interest), are reasonable, and do not compound. Current penal charge: 1.5% per month on overdue EMI, applied flat.</p>
 
             <h3 style={h3Style}>5. Prepayment / foreclosure</h3>
             <p style={pStyle}>No prepayment charges are levied on floating-rate retail loans (Home Loan, LAP) to individual borrowers, as per RBI directions. For fixed-rate loans and business loans, prepayment charges (if any) are disclosed upfront in the KFS.</p>
@@ -313,7 +313,7 @@ const Legal = () => {
             <p style={pStyle}>All customers and beneficial owners are screened against the United Nations Security Council Consolidated Sanctions List and other applicable lists at onboarding and periodically thereafter.</p>
 
             <h3 style={h3Style}>5. Record retention &amp; Principal Officer</h3>
-            <p style={pStyle}>KYC records are retained for at least 5 years from the date of cessation of business relationship; transaction records for at least 5 years from the date of transaction. The designated Principal Officer for AML/CFT compliance is reachable at po-aml@arnavfincorp.in.</p>
+            <p style={pStyle}>KYC records are retained for at least 5 years from the date of cessation of business relationship; transaction records for at least 5 years from the date of transaction. The designated Principal Officer for AML/CFT compliance is reachable at arnavfincorp@gmail.com.</p>
           </section>
 
           {/* ───── 7. RECOVERY CODE OF CONDUCT ───── */}
@@ -341,7 +341,7 @@ const Legal = () => {
             </ul>
 
             <h3 style={h3Style}>3. Complaints against recovery agents</h3>
-            <p style={pStyle}>Any borrower experiencing conduct in violation of this code should immediately contact the Grievance Redressal Officer at gro@arnavfincorp.in or call 1800-XXX-XXXX. All complaints are investigated within 7 days; confirmed violations result in termination of the agent contract.</p>
+            <p style={pStyle}>Any borrower experiencing conduct in violation of this code should immediately contact the Grievance Redressal Officer at arnavfincorp@gmail.com or call 01482-238388. All complaints are investigated within 7 days; confirmed violations result in termination of the agent contract.</p>
           </section>
 
           {/* ───── 8. CITIZEN'S CHARTER ───── */}
@@ -375,7 +375,7 @@ const Legal = () => {
             <p>{t('legalPage.ctaDesc')}</p>
             <div className="about-cta-btns">
               <Link to="/contact" className="about-cta-btn-primary">{t('common.contactTeam')} →</Link>
-              <a href="mailto:gro@arnavfincorp.in" className="about-cta-btn-secondary">{t('common.emailGRO')}</a>
+              <a href="mailto:arnavfincorp@gmail.com" className="about-cta-btn-secondary">{t('common.emailGRO')}</a>
             </div>
           </motion.div>
         </main>

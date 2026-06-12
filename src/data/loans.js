@@ -14,13 +14,8 @@ export const loanCardsData = [
     image: 'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=700&q=80',
     slug: 'personal-loan'
   },
-  { 
-    key: 'msmeLoan', 
-    image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=700&q=80',
-    slug: 'msme-loan'
-  },
-  { 
-    key: 'vehicleLoan4W', 
+  {
+    key: 'vehicleLoan4W',
     image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=700&q=80',
     slug: 'vehicle-loan-4w'
   },
